@@ -31333,6 +31333,54 @@ img.absolute_image {
 }
 
 #nama, #nomor, #pekerjaan, #domisili, #jenis_jaminan, #dokumen_jaminan, #lokasi_jaminan, #jumlah_pinjaman, #penghasilan {
-	  background-color: #fff;
+	background-color: #fff;
 	color: #a6a6a6;
 }
+
+.table-container {
+	display: flex; /* Menggunakan flexbox untuk tata letak */
+	justify-content: space-between; /* Menyisipkan ruang di antara kedua tabel */
+	border-color: #035db0;
+}
+  
+.table-left {
+	flex: 1;
+	padding: 10px;
+	margin-right: 10px;
+	border-color: #035db0;
+  }
+  
+  .table-left table {
+	border-collapse: collapse; /* Menggabungkan garis di antara sel */
+  }
+  
+  .table-left td {
+	border: 2px solid #035db0; /* Mengatur garis pemisah pada sel */
+	padding: 5px; /* Menambahkan ruang di sekitar konten sel */
+	text-align: center;
+	color: #003869;
+  }
+  
+  .table-right {
+	flex: 1;
+	padding: 10px;
+	margin-right: 10px;
+	border-color: #035db0;
+	text-align: center;
+  }
+  
+  .table-right table {
+	border-collapse: collapse; /* Menggabungkan garis di antara sel */
+  }
+  
+  .table-right td {
+	border: 2px solid #035db0; /* Mengatur garis pemisah pada sel */
+	padding: 5px; /* Menambahkan ruang di sekitar konten sel */
+	text-align: center;
+	color: #003869;
+  }
+
+  .table-right td:empty {
+	background-color: #003869; /* Ganti dengan warna latar belakang yang Anda inginkan */
+  }
+  
