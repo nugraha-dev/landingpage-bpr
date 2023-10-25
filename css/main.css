@@ -31228,7 +31228,8 @@ img.absolute_image {
 .image-container {
 	display: flex;
 	justify-content: center; /* Pusatkan gambar horizontal */
-	  align-items: center; /* Pusatkan gambar vertikal */
+	align-items: center; /* Pusatkan gambar vertikal */
+	padding: 50px 20px;
 }
 
 .image-container img {
@@ -31261,42 +31262,53 @@ img.absolute_image {
 }
 
 .info-box {
-	display: flex;
-	justify-content: space-between;
-	margin: 20px;
-	  padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Untuk memberikan jarak antara kolom */
 }
 
 .info-box-column {
-	flex: 0 0 30%; /* Lebar masing-masing kolom */
-	padding: 20px;
-	background-color: #f2f2f2; /* Warna latar belakang */
-	border: 1px solid #ddd; /* Garis pinggir */
-	text-align: center;
-	margin: 20px;
-	  padding: 20px;
+    flex: 0 0 calc(30% - 20px); /* Lebar masing-masing kolom, dikurangi jarak (20px) */
+    padding: 20px;
+    background-color: #f2f2f2; /* Warna latar belakang */
+    border: 1px solid #ddd; /* Garis pinggir */
+    text-align: center;
+}
+
+/* Tambahkan media query untuk mengatur kolom ke bawah pada layar lebih kecil */
+@media (max-width: 768px) {
+    .info-box-column {
+        flex: 0 0 100%; /* Saat layar lebih kecil, setiap kolom akan menempati lebar 100% */
+    }
 }
 
 .info-box-column2 {
-	flex: 0 0 40%; /* Lebar masing-masing kolom */
-	padding: 20px;
-	background-color: #073a4e; /* Warna latar belakang */
-	border: 1px solid #ddd; /* Garis pinggir */
-	text-align: center;
-	margin: 20px;
-	  padding: 20px;
+	flex: 0 0 calc(50% - 10px); /* Lebar masing-masing kolom, dikurangi jarak (20px) */
+    padding: 20px;
+    background-color: #073a4e; /* Warna latar belakang */
+    border: 1px solid #ddd; /* Garis pinggir */
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .info-box-column2 {
+        flex: 0 0 100%; /* Saat layar lebih kecil, setiap kolom akan menempati lebar 100% */
+    }
 }
 
 .info-box-column3 {
-	flex: 0 0 30%; /* Lebar masing-masing kolom */
-	background-color: #00407a; /* Warna latar belakang */
-	border: 1px solid #fff; /* Garis pinggir */
-	text-align: left;
-	margin: 20px;
-	padding: 20px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex: 0 0 calc(30% - 20px); /* Lebar masing-masing kolom, dikurangi jarak (20px) */
+    padding: 20px;
+    background-color: #00407a; /* Warna latar belakang */
+    border: 1px solid #fff; /* Garis pinggir */
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .info-box-column2 {
+        flex: 0 0 100%; /* Saat layar lebih kecil, setiap kolom akan menempati lebar 100% */
+    }
 }
 
 .info-box-column3 h5 {
@@ -31311,6 +31323,7 @@ img.absolute_image {
 
 .info-box-column3 p {
 	color: #f2f2f2;
+	padding: 0;
 }
 
 .info-box-icon {
@@ -31338,21 +31351,15 @@ img.absolute_image {
 }
 
 .table-container {
-	display: flex; /* Menggunakan flexbox untuk tata letak */
-	justify-content: space-between; /* Menyisipkan ruang di antara kedua tabel */
-	border-color: #035db0;
+    display: flex;
+    border-color: #035db0;
+    overflow-x: auto; /* Membuat scrollbar horizontal jika perlu */
 }
   
-.table-left {
-	flex: 1;
-	padding: 10px;
-	margin-right: 10px;
-	border-color: #035db0;
-  }
-  
-  .table-left table {
-	border-collapse: collapse; /* Menggabungkan garis di antara sel */
-  }
+.table-left, .table-right {
+    padding: 10px;
+    border-color: #035db0;
+}
   
   .table-left td {
 	border: 2px solid #035db0; /* Mengatur garis pemisah pada sel */
@@ -31361,17 +31368,9 @@ img.absolute_image {
 	color: #003869;
   }
   
-  .table-right {
-	flex: 1;
-	padding: 10px;
-	margin-right: 10px;
-	border-color: #035db0;
-	text-align: center;
-  }
-  
-  .table-right table {
-	border-collapse: collapse; /* Menggabungkan garis di antara sel */
-  }
+  .table-left table, .table-right table {
+    width: 100%; /* Mengisi seluruh lebar tabel */
+}
   
   .table-right td {
 	border: 2px solid #035db0; /* Mengatur garis pemisah pada sel */
@@ -31383,4 +31382,38 @@ img.absolute_image {
   .table-right td:empty {
 	background-color: #003869; /* Ganti dengan warna latar belakang yang Anda inginkan */
   }
-  
+
+  /* Mengatur tampilan default */
+@media screen and (min-width: 600px) {
+    .table-container {
+        justify-content: space-between;
+    }
+}
+
+/* Responsif untuk layar yang lebih kecil */
+@media screen and (max-width: 599px) {
+    .table-container {
+        flex-direction: column; /* Mengatur tampilan tabel dalam satu kolom */
+        align-items: center; /* Mengatur tabel agar berada di tengah */
+    }
+    .table-left, .table-right {
+        width: 100%; /* Mengisi seluruh lebar container pada layar kecil */
+    }
+}	
+
+  p {
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+	
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 40px;
+	padding-left: 20px;
+  }
+
+  .col-3 p {
+	text-align: left;
+	margin: 0;
+  }
