@@ -27796,6 +27796,13 @@ body.active-side-header.slide-right .page_header_side {
 	clear: both;
 	overflow: hidden;
 	position: relative;
+	width: 100%; /* Mengisi seluruh lebar parent container */
+    max-width: 100%; /* Maksimum lebar slider */
+}
+
+.page_slider img {
+    width: 100%; /* Mengisi seluruh lebar kontainer slider */
+    height: auto; /* Memastikan gambar tetap proporsional */
 }
 
 .page_slider .video-bg .s-overlay.ds:before {
@@ -31252,8 +31259,17 @@ img.absolute_image {
 .footer-logo {
     display: flex;
     align-items: center;
-    margin: 20px;
-    padding: 20px;
+    /* margin: 20px;
+    padding: 20px; */
+	/* margin-top: 10px; */
+	margin-right: 20px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+	
+	/* padding-top: 10px; */
+	padding-right: 20px;
+	padding-bottom: 40px;
+	padding-left: 20px;
 }
 
 /* Responsif pada layar berukuran kecil (misalnya, ponsel) */
@@ -31313,8 +31329,14 @@ img.absolute_image {
     }
 }
 
+.info-box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .info-box-column3 {
-	flex: 0 0 calc(30% - 20px); /* Lebar masing-masing kolom, dikurangi jarak (20px) */
+    flex: 0 0 calc(30% - 20px); /* Lebar masing-masing kolom, dikurangi jarak (20px) */
     padding: 20px;
     background-color: #00407a; /* Warna latar belakang */
     border: 1px solid #fff; /* Garis pinggir */
@@ -31322,7 +31344,11 @@ img.absolute_image {
 }
 
 @media (max-width: 768px) {
-    .info-box-column2 {
+    .info-box-container {
+        flex-direction: column; /* Saat layar lebih kecil, tata letak akan menjadi kolom (berada di bawah) */
+    }
+
+    .info-box-column3 {
         flex: 0 0 100%; /* Saat layar lebih kecil, setiap kolom akan menempati lebar 100% */
     }
 }
@@ -31429,7 +31455,30 @@ img.absolute_image {
 	padding-left: 20px;
   }
 
-  /* .col-3 p {
-	text-align: left;
-	margin: 0;
-  } */
+  p[align="left"] {
+	color: #4d6988;
+  }
+
+  p[align="center"] {
+	color: #4d6988;
+    margin-top: 10px;
+	margin-right: 20px;
+	margin-bottom: 30px;
+	margin-left: 20px;
+	
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	padding-left: 20px;
+}
+
+/* Menambahkan padding ke elemen dengan class "row" */
+/* .row {
+    margin-top: 50px;
+	margin-right: 20px;
+	margin-left: 20px;
+	
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+} */
