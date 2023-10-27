@@ -31395,6 +31395,8 @@ img.absolute_image {
 .table-container {
     display: flex;
     border-color: #035db0;
+	justify-content: center;
+ 	align-items: center;
     overflow-x: auto; /* Membuat scrollbar horizontal jika perlu */
 }
   
@@ -31424,13 +31426,6 @@ img.absolute_image {
   .table-right td:empty {
 	background-color: #003869; /* Ganti dengan warna latar belakang yang Anda inginkan */
   }
-
-  /* Mengatur tampilan default */
-@media screen and (min-width: 600px) {
-    .table-container {
-        justify-content: space-between;
-    }
-}
 
 /* Responsif untuk layar yang lebih kecil */
 @media screen and (max-width: 599px) {
@@ -31482,3 +31477,20 @@ img.absolute_image {
 	padding-right: 20px;
 	padding-left: 20px;
 } */
+
+  #slider-image-landscape {
+    display: block;
+}
+
+#slider-image-portrait {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    #slider-image-landscape {
+        display: none;
+    }
+    #slider-image-portrait {
+        display: block;
+    }
+}
