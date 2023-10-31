@@ -88,124 +88,104 @@
 							<p class="text-right mb-0 close-wrapper"><a href="javascript:void(0)">×</a></p>
 
 							<div class="widget widget_recent_posts">
-								<div class="widget widget_recent_posts">
-									<div class="form-wrapper">
-										<form class="contact-form" method="post" action="/">
-											<div class="row c-mb-20">
-												<div class="col-12 form-title text-center form-builder-item">
-													<div class="header title">
-														<h4>Ajukan Kredit Sekarang</h4>
-													</div>
+								<div class="form-wrapper">
+									<form class="contact-form" method="post" action="proses_form.php">
+										<input type="hidden" name="_token" value="{{ csrf_token() }}">
+										<div class="row c-mb-20">
+											<div class="col-12 form-title text-center form-builder-item">
+												<div class="header title">
+													<h4>Ajukan Kredit Sekarang</h4>
 												</div>
 											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="nama">Nama <span class="required">*</span></label>
-														<input type="text" aria-required="true" size="30" value="" name="nama" id="nama" class="form-control" placeholder="Nama">
-													</div>
-												</div>
-											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="nomor">No. Telepon/Whatsapp <span class="required">*</span></label>
-														<input type="number" aria-required="true" size="30" value="" name="nomor" id="nomor" class="form-control" placeholder="No. Telepon/Whatsapp">
-													</div>
-												</div>
-											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="pekerjaan">Pekerjaan <span class="required">*</span></label>
-														<select name="pekerjaan" id="pekerjaan" class="form-control">
-															<option value="" selected hidden>Pekerjaan</option>
-															<option value="option1">Option 1</option>
-															<option value="option2">Option 2</option>
-															<option value="option3">Option 3</option>
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="domisili">Domisili <span class="required">*</span></label>
-														<select name="domisili" id="domisili" class="form-control">
-															<option value="" selected hidden>Domisili</option>
-															<option value="option1">Option 1</option>
-															<option value="option2">Option 2</option>
-															<option value="option3">Option 3</option>
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="jenis_jaminan">Jenis Jaminan <span class="required">*</span></label>
-														<select name="jenis_jaminan" id="jenis_jaminan" class="form-control">
-															<option value="" selected hidden>Jenis Jaminan</option>
-															<option value="option1">Option 1</option>
-															<option value="option2">Option 2</option>
-															<option value="option3">Option 3</option>
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="dokumen_jaminan">Dokumen Jaminan <span class="required">*</span></label>
-														<select name="dokumen_jaminan" id="dokumen_jaminan" class="form-control">
-															<option value="" selected hidden>Dokumen Jaminan</option>
-															<option value="option1">Option 1</option>
-															<option value="option2">Option 2</option>
-															<option value="option3">Option 3</option>
-														</select>
-													</div>
-												</div>
-											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="lokasi_jaminan">Lokasi Jaminan <span class="required">*</span></label>
-														<select name="lokasi_jaminan" id="lokasi_jaminan" class="form-control">
-															<option value="" selected hidden>Lokasi Jaminan</option>
-															<option value="option1">Option 1</option>
-															<option value="option2">Option 2</option>
-															<option value="option3">Option 3</option>
-														</select>
-													</div>
-												</div>
-											</div>											
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="jumlah_pinjaman">Jumlah Pinjaman <span class="required">*</span></label>
-														<input type="number" aria-required="true" size="30" value="" name="jumlah_pinjaman" id="jumlah_pinjaman" class="form-control" placeholder="Jumlah Pinjaman">
-													</div>
-												</div>
-											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-lg-12 text-center">
-													<div class="form-group has-placeholder">
-														<label for="penghasilan">Penghasilan Per Bulan <span class="required">*</span></label>
-														<input type="number" aria-required="true" size="30" value="" name="penghasilan" id="penghasilan" class="form-control" placeholder="Penghasilan Per Bulan">
-													</div>
-												</div>
-											</div>
-											<div class="row c-mb-10 c-gutter-10">
-												<div class="col-sm-12 mb-0 mt-50">
-													<div class="form-group">
-														<a class="btn btn-gradient big-btn" href="https://wa.me/0811877875">Ajukan Kredit</a>
-													</div>
-												</div>
-											</div>
-										</form>
-									</div>
+										</div>
+							
+										<!-- Field nama -->
+										<div class="form-group has-placeholder">
+											<label for="nama">Nama <span class="required">*</span></label>
+											<input type="text" aria-required="true" size="30" value="" name="nama" id="nama" class="form-control" placeholder="Nama">
+										</div>
+							
+										<!-- Field nomor telepon -->
+										<div class="form-group has-placeholder">
+											<label for="nomor">No. Telepon/Whatsapp <span class="required">*</span></label>
+											<input type="tel" aria-required="true" size="30" value="" name="nomor" id="nomor" class="form-control" placeholder="No. Telepon/Whatsapp">
+										</div>
+							
+										<!-- Field pekerjaan -->
+										<div class="form-group has-placeholder">
+											<label for="pekerjaan">Pekerjaan <span class="required">*</span></label>
+											<select name="pekerjaan" id="pekerjaan" class="form-control">
+												<option value="" selected hidden>Pekerjaan</option>
+												<option value="Guru">Guru</option>
+												<option value="Arsitek">Arsitek</option>
+												<option value="Dokter">Dokter</option>
+											</select>
+										</div>
+							
+										<!-- Field domisili -->
+										<div class="form-group has-placeholder">
+											<label for="domisili">Domisili <span class="required">*</span></label>
+											<select name="domisili" id="domisili" class="form-control">
+												<option value="" selected hidden>Domisili</option>
+												<option value="Jakarta">Jakarta</option>
+												<option value="Bandung">Bandung</option>
+												<option value="Surabaya">Surabaya</option>
+											</select>
+										</div>
+							
+										<!-- Field jenis jaminan -->
+										<div class="form-group has-placeholder">
+											<label for="jenis_jaminan">Jenis Jaminan <span class="required">*</span></label>
+											<select name="jenis_jaminan" id="jenis_jaminan" class="form-control">
+												<option value="" selected hidden>Jenis Jaminan</option>
+												<option value="Sertifikat Tanah">Sertifikat Tanah</option>
+												<option value="Girik">Girik</option>
+												<option value="BPKB Kendaraan">BPKB Kendaraan</option>
+											</select>
+										</div>
+							
+										<!-- Field dokumen jaminan -->
+										<div class="form-group has-placeholder">
+											<label for="dokumen_jaminan">Dokumen Jaminan <span class="required">*</span></label>
+											<select name="dokumen_jaminan" id="dokumen_jaminan" class="form-control">
+												<option value="" selected hidden>Dokumen Jaminan</option>
+												<option value="KTP">KTP</option>
+												<option value="Akta Nikah">Akta Nikah</option>
+												<option value="Kartu Keluarga">Kartu Keluarga</option>
+											</select>
+										</div>
+							
+										<!-- Field lokasi jaminan -->
+										<div class="form-group has-placeholder">
+											<label for="lokasi_jaminan">Lokasi Jaminan <span class="required">*</span></label>
+											<select name="lokasi_jaminan" id="lokasi_jaminan" class="form-control">
+												<option value="" selected hidden>Lokasi Jaminan</option>
+												<option value="Jakarta">Jakarta</option>
+												<option value="Bandung">Bandung</option>
+												<option value="Surabaya">Surabaya</option>
+											</select>
+										</div>
+							
+										<!-- Field jumlah pinjaman -->
+										<div class="form-group has-placeholder">
+											<label for="jumlah_pinjaman">Jumlah Pinjaman <span class="required">*</span></label>
+											<input type="number" aria-required="true" size="30" value="" name="jumlah_pinjaman" id="jumlah_pinjaman" class="form-control" placeholder="Jumlah Pinjaman">
+										</div>
+							
+										<!-- Field penghasilan -->
+										<div class="form-group has-placeholder">
+											<label for="penghasilan">Penghasilan Per Bulan <span class="required">*</span></label>
+											<input type="number" aria-required="true" size="30" value="" name="penghasilan" id="penghasilan" class="form-control" placeholder="Penghasilan Per Bulan">
+										</div>
+							
+										<!-- Tombol submit -->
+										<div class="form-group">
+											<button type="submit" class="btn btn-gradient big-btn">Ajukan Kredit</button>
+										</div>
+									</form>
 								</div>
-								
+							</div>
+																
 							<!-- <div class="widget widget_mailchimp">
 								<h3 class="widget-title">Newsletter</h3>
 
