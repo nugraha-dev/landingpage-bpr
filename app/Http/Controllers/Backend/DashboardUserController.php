@@ -8,7 +8,7 @@ use App\Models\Website;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class DashboardUserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('pages.dashboard.index');
+        return view('pages.dashboardUser.index');
     }
 
     /**
@@ -62,7 +62,7 @@ class DashboardController extends Controller
         $data = AjuanKredit::find($id);
         $kredit = AjuanKredit::all();
 
-        return view('pages.dashboard.index', compact('data', 'kredit'));
+        return view('pages.dashboardUser.index', compact('data', 'kredit'));
     }
 
     /**
@@ -102,10 +102,10 @@ class DashboardController extends Controller
                     'penghasilan' => $request->penghasilan,
                 ]
             );
-            return redirect()->route('admin.dashboard')->with('success', 'Berhasil merubah data client');
+            return redirect()->route('user.dashboard')->with('success', 'Berhasil merubah data client');
         } catch (\Throwable $th) {
             //throw $th;
-            return redirect()->route('admin.dashboard.show', $id)->withErrors($th->getMessage());
+            return redirect()->route('user.dashboard.show', $id)->withErrors($th->getMessage());
         }
     }
 
@@ -119,9 +119,9 @@ class DashboardController extends Controller
     {
         try {
             AjuanKredit::find($id)->delete();
-            return redirect()->route('admin.dashboard')->with('success', 'Berhasil menghapus client');
+            return redirect()->route('user.dashboard')->with('success', 'Berhasil menghapus client');
         } catch (\Throwable $th) {
-            return redirect()->route('admin.dashboard')->withErrors($th->getMessage());
+            return redirect()->route('user.dashboard')->withErrors($th->getMessage());
         }
     }
 }
