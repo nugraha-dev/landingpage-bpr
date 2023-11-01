@@ -31522,3 +31522,17 @@ img.absolute_image {
         transform: translateY(0); /* Hapus transform pada layar ponsel */
     }
 }
+
+.custom-form {
+    width: 50px; /* Lebar form */
+    height: 50px; /* Tinggi form */
+    overflow: hidden; /* Menghilangkan konten yang melebihi ukuran form */
+}
+
+/* Atur ukuran elemen-elemen di dalam form */
+.custom-form input,
+.custom-form select,
+.custom-form button {
+    width: 100%; /* Lebar elemen */
+    height: 100%; /* Tinggi elemen */
+}

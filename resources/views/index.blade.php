@@ -255,7 +255,7 @@
 					<img id="slider-image-landscape" src="images/bpr/Banner.webp" alt="img Landscape" draggable="false">
 					<img id="slider-image-portrait" src="images/bpr/Banner_portrait.webp" alt="img Portrait" draggable="false">
 				</div>
-				<div class="form-wrapper">
+				<div class="form-wrapper custom-form">
 					<form action="{{ route('admin.dashboard.store') }}" method="POST">
                         @csrf
 						<div class="row c-mb-20">
@@ -287,14 +287,8 @@
 									<label for="pekerjaan">Pekerjaan <span class="required">*</span></label>
 									<select name="pekerjaan" id="pekerjaan" aria-required="true" class="form-control">
 										<option value="" selected disabled>Pekerjaan</option>
-										<option value="PNS">PNS</option>
-										<option value="Pegawai Swasta">Pegawai Swasta</option>
-										<option value="Pensiunan PNS">Pensiunan PNS</option>
-										<option value="Pensiunan Biasa">Pensiunan Biasa</option>
-										<option value="TNI/Polri">TNI/Polri</option>
-										<option value="Wiraswasta atau Pengusaha">Wiraswasta atau Pengusaha</option>
-										<option value="Tidak Bekerja">Tidak Bekerja</option>
-										<option value="Lainnya">Lainnya</option>
+										<option value="PT/Perusahaan">PT/Perusahaan</option>
+										<option value="Profesional">Profesional</option>
 									</select>
 								</div>
 							</div>
@@ -330,7 +324,16 @@
 									<label for="jenis_jaminan">Jenis Jaminan <span class="required">*</span></label>
 									<select name="jenis_jaminan" id="jenis_jaminan" class="form-control">
 										<option value="" selected disabled>Jenis Jaminan</option>
-										<option value="Sertifikat Tanah dan Bangunan (SHM/SHGB)">Sertifikat Tanah dan Bangunan (SHM/SHGB)</option>
+										<option value="Ruko">Ruko</option>
+										<option value="Apartemen">Apartemen</option>
+										<option value="Kontrakan">Kontrakan</option>
+										<option value="Kios">Kios</option>
+										<option value="Gudang">Gudang</option>
+										<option value="Hotel">Hotel</option>
+										<option value="Gedung">Gedung</option>
+										<option value="Tanah Kosong">Tanah Kosong</option>
+										<option value="Mobil">Mobil</option>
+										<option value="Motor">Motor</option>
 									</select>
 								</div>
 							</div>
