@@ -38,17 +38,26 @@ class DashboardController extends Controller
      */
     public function store(Request $request)
     {
-        $data = new AjuanKredit();
-        $data->nama = $request->input('nama');
-        $data->nomor = $request->input('nomor');
-        $data->pekerjaan = $request->input('pekerjaan');
-        $data->domisili = $request->input('domisili');
-        $data->jenis_jaminan = $request->input('jenis_jaminan');
-        $data->dokumen_jaminan = $request->input('dokumen_jaminan');
-        $data->lokasi_jaminan = $request->input('lokasi_jaminan');
-        $data->jumlah_pinjaman = $request->input('jumlah_pinjaman');
-        $data->penghasilan = $request->input('penghasilan');
-        $data->save();
+        try {
+            AjuanKredit::create(
+                [
+                    'nama' => $request->input('nama'),
+                    'nomor' => $request->input('nomor'),
+                    'pekerjaan' => $request->input('pekerjaan'),
+                    'domisili' => $request->input('domisili'),
+                    'jenis_jaminan' => $request->input('jenis_jaminan'),
+                    'dokumen_jaminan' => $request->input('dokumen_jaminan'),
+                    'lokasi_jaminan' => $request->input('lokasi_jaminan'),
+                    'jumlah_pinjaman' => $request->input('jumlah_pinjaman'),
+                    'penghasilan' => $request->input('penghasilan'),
+                ]
+            );
+            return redirect()->route('index')->with('success', 'Ajuan berhasil dibuat');
+        } catch (\Throwable $th) {
+            //throw $th;
+            return redirect()->route('index')->withErrors($th->getMessage());
+        }
+        return redirect()->route('index')->withErrors('Eror');
     }
 
     /**

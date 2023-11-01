@@ -51,6 +51,7 @@
                 <li class="nav-item">
                     <a href="{{ route('admin.user') }}"
                         class="nav-link {{ Route::currentRouteName() == 'admin.user' ? 'active' : '' }}">
+                        <i class="fas fa-users nav-icon"></i>
                         <p>Manajemen User</p>
                     </a>
                 </li>

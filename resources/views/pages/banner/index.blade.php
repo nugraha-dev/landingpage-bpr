@@ -24,40 +24,57 @@
         <!-- /.content-header -->
 
         <!-- Banner Sekarang -->
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Banner Sekarang</h2>
+        <div class="col-md-12">
+            <div class="card card-default">
+                <div class="card-header">
+                    <h3 class="card-title">Banner Sekarang</h3>
+                </div>
                 <img src="{{ $currentBanner->image }}" alt="Banner Sekarang">
             </div>
         </div>
 
-        <!-- Formulir Penggantian Banner -->
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Upload Banner Baru</h2>
-                <form method="post" action="{{ route('update_banner') }}" enctype="multipart/form-data">
+        <div class="col-md-12">
+            <!-- general form elements -->
+            <div class="card card-default">
+                <div class="card-header">
+                    <h3 class="card-title">Upload Banner Baru</h3>
+                </div>
+                <!-- /.card-header -->
+                <!-- form start -->
+                <form action="{{ route('admin.banner.store') }}" method="POST">
                     @csrf
-                    <div class="form-group">
-                        <label for="new_banner_image">Gambar Banner Baru</label>
-                        <input type="file" name="new_banner_image" class="form-control" id="new_banner_image">
-                    </div>
-                    <div class="form-group">
-                        <label for="start_date">Tanggal Mulai</label>
-                        <input type="date" name="start_date" class="form-control" id="start_date">
-                    </div>
-                    <div class="form-group">
-                        <label for="end_date">Tanggal Berakhir</label>
-                        <input type="date" name="end_date" class="form-control" id="end_date">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Simpan Banner</button>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="banner_nanti">Gambar Banner Baru</label>
+                                    <input type="file" name="banner_nanti" class="form-control" id="banner_nanti">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="tgl_awal">Tanggal Mulai</label>
+                                    <input type="date" name="start_date" class="form-control" id="tgl_awal">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="tgl_akhir">Tanggal Berakhir</label>
+                                    <input type="date" name="end_date" class="form-control" id="tgl_akhir">
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Simpan Banner</button>
+                            </div>
                 </form>
             </div>
         </div>
 
-        <!-- Banner Yang Akan Datang -->
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Banner Yang Akan Datang</h2>
+        <div class="col-md-12">
+            <div class="card card-default">
+                <div class="card-header">
+                    <h3 class="card-title">Banner Yang Akan Datang</h3>
+                </div>
                 @if ($nextBanner)
                     <img src="{{ $nextBanner->image }}" alt="Banner Yang Akan Datang">
                 @else

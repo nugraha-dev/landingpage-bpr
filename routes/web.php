@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\BannerController;
 use App\Http\Controllers\Backend\BannerUserController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\UserController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,11 @@ use App\Http\Controllers\Backend\UserController;
 Route::get('', function () {
     return redirect()->route('admin.home');
 });
+
+Route::get('/index', function () {
+    return view('index');
+});
+
 
 Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -39,7 +45,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'middleware' => ['auth', 'a
     });
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('home');
 
-    Route::post('/proses-data', 'DashboardController@store');
+    Route::post('/admin-dashboard/post', [DashboardController::class, 'store'])->name('dashboard.store');
     Route::get('/admin-dashboard/show/{id}', [DashboardController::class, 'show'])->name('dashboard.show');
     Route::get('/admin-dashboard/destroy/{id}', [DashboardController::class, 'destroy'])->name('dashboard.destroy');
     Route::patch('/admin-dashboard/update/{id}', [DashboardController::class, 'update'])->name('dashboard.update');
