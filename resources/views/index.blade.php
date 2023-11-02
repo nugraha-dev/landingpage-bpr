@@ -222,13 +222,13 @@
 									</ul>
 								</nav>
 							</div>
-							<div class="col-xl-3 col-md-7 col-12  d-flex justify-content-md-end">
+							<!-- <div class="col-xl-3 col-md-7 col-12  d-flex justify-content-md-end">
 								<ul class="top-includes">
 									<li class="special-menu">
 										<span class="toggle_menu toggle_menu_side header-slide toggle_menu_side_special"><span></span></span>
 									</li>
 								</ul>
-							</div>
+							</div> -->
 
 						</div>
 
@@ -255,152 +255,162 @@
 					<img id="slider-image-landscape" src="images/bpr/Banner.webp" alt="img Landscape" draggable="false">
 					<img id="slider-image-portrait" src="images/bpr/Banner_portrait.webp" alt="img Portrait" draggable="false">
 				</div>
-				<div class="form-wrapper custom-form">
-					<form action="{{ route('admin.dashboard.store') }}" method="POST">
-                        @csrf
-						<div class="row c-mb-20">
-							<div class="col-12 form-title text-center form-builder-item">
-								<div class="header title">
-									<h6>Ajukan Kredit Sekarang</h6>
+
+					<div class="lp-element lp-pom-box" id="lp-pom-box-30">
+						<div id="lp-pom-box-30-color-overlay"></div>
+
+						<div class="form-wrapper">
+							<form action="{{ route('admin.dashboard.store') }}" method="POST">
+								<div class="row c-mb-20">
+									<div class="col-12 form-title text-center form-builder-item">
+										<div class="header-title">
+											<h6 style="color: white;">Ajukan Kredit Sekarang</h6>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="nama">Nama <span class="required">*</span></label>
-									<input type="text" aria-required="true" size="30" value="" name="nama" id="nama" class="form-control" placeholder="Nama">
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="nama">Nama <span class="required"></span></label>
+											<input type="text" aria-required="true" size="30" value="" name="nama" id="nama" class="form-control" placeholder="Nama">
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="nomor">No. Telepon/Whatsapp <span class="required">*</span></label>
-									<input type="number" aria-required="true" size="30" value="" name="nomor" id="nomor" class="form-control" placeholder="No. Telepon/Whatsapp">
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="nomor">No. Telepon/Whatsapp <span class="required"></span></label>
+											<input type="text" pattern="\d*" aria-required="true" size="30" value="" name="nomor" id="nomor" class="form-control" placeholder="No. Telepon/Whatsapp" inputmode="numeric">
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="pekerjaan">Pekerjaan <span class="required">*</span></label>
-									<select name="pekerjaan" id="pekerjaan" aria-required="true" class="form-control">
-										<option value="" selected disabled>Pekerjaan</option>
-										<option value="PT/Perusahaan">PT/Perusahaan</option>
-										<option value="Profesional">Profesional</option>
-									</select>
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="pekerjaan">Pekerjaan <span class="required"></span></label>
+											<select name="pekerjaan" id="pekerjaan" aria-required="true" class="form-control">
+												<option value="" selected disabled>Pekerjaan</option>
+												<option value="PT/Perusahaan">PT/Perusahaan</option>
+												<option value="Profesional">Profesional</option>
+											</select>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="domisili">Domisili <span class="required">*</span></label>
-									<select name="domisili" id="domisili" class="form-control">
-										<option value="" selected disabled>Domisili</option>
-										<option value="Bekasi Kota">Bekasi Kota</option>
-										<option value="Bekasi Kabupaten">Bekasi Kabupaten</option>
-										<option value="Bogor Kota">Bogor Kota</option>
-										<option value="Bogor Kabupaten">Bogor Kabupaten</option>
-										<option value="Depok Kota">Depok Kota</option>
-										<option value="Jakarta Timur">Jakarta Timur</option>
-										<option value="Jakarta Selatan">Jakarta Selatan</option>
-										<option value="Jakarta Barat">Jakarta Barat</option>
-										<option value="Jakarta Utara">Jakarta Utara</option>
-										<option value="Jakarta Pusat">Jakarta Pusat</option>
-										<option value="Tangerang Selatan">Tangerang Selatan</option>
-										<option value="Tangerang Kota">Tangerang Kota</option>
-										<option value="Tangerang Kabupaten">Tangerang Kabupaten</option>
-										<option value="Kota Serang">Kota Serang</option>
-										<option value="Kabupaten Karawang">Kabupaten Karawang</option>
-									</select>
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="domisili">Domisili <span class="required"></span></label>
+											<select name="domisili" id="domisili" class="form-control">
+												<option value="" selected disabled>Domisili</option>
+												<option value="Bekasi Kota">Bekasi Kota</option>
+												<option value="Bekasi Kabupaten">Bekasi Kabupaten</option>
+												<option value="Bogor Kota">Bogor Kota</option>
+												<option value="Bogor Kabupaten">Bogor Kabupaten</option>
+												<option value="Depok Kota">Depok Kota</option>
+												<option value="Jakarta Timur">Jakarta Timur</option>
+												<option value="Jakarta Selatan">Jakarta Selatan</option>
+												<option value="Jakarta Barat">Jakarta Barat</option>
+												<option value="Jakarta Utara">Jakarta Utara</option>
+												<option value="Jakarta Pusat">Jakarta Pusat</option>
+												<option value="Tangerang Selatan">Tangerang Selatan</option>
+												<option value="Tangerang Kota">Tangerang Kota</option>
+												<option value="Tangerang Kabupaten">Tangerang Kabupaten</option>
+											</select>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="jenis_jaminan">Jenis Jaminan <span class="required">*</span></label>
-									<select name="jenis_jaminan" id="jenis_jaminan" class="form-control">
-										<option value="" selected disabled>Jenis Jaminan</option>
-										<option value="Ruko">Ruko</option>
-										<option value="Apartemen">Apartemen</option>
-										<option value="Kontrakan">Kontrakan</option>
-										<option value="Kios">Kios</option>
-										<option value="Gudang">Gudang</option>
-										<option value="Hotel">Hotel</option>
-										<option value="Gedung">Gedung</option>
-										<option value="Tanah Kosong">Tanah Kosong</option>
-										<option value="Mobil">Mobil</option>
-										<option value="Motor">Motor</option>
-									</select>
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="jenis_jaminan">Jenis Jaminan <span class="required"></span></label>
+											<select name="jenis_jaminan" id="jenis_jaminan" class="form-control">
+												<option value="" selected disabled>Jenis Jaminan</option>
+												<option value="Rumah">Rumah</option>
+												<option value="Ruko">Ruko</option>
+												<option value="Apartemen">Apartemen</option>
+												<option value="Kontrakan">Kontrakan</option>
+												<option value="Kios">Kios</option>
+												<option value="Gedung">Gedung</option>
+												<option value="Hotel">Hotel</option>
+												<option value="Gedung">Gedung</option>
+												<option value="Tanah Kosong">Tanah Kosong</option>
+												<option value="Mobil">Mobil</option>
+												<option value="Motor">Motor</option>
+											</select>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="dokumen_jaminan">Dokumen Jaminan <span class="required">*</span></label>
-									<select name="dokumen_jaminan" id="dokumen_jaminan" class="form-control">
-										<option value="" selected disabled>Dokumen Jaminan</option>
-										<option value="KTP">KTP</option>
-										<option value="Akta Nikah">Akta Nikah</option>
-										<option value="Kartu Keluarga">Kartu Keluarga</option>
-									</select>
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="dokumen_jaminan">Dokumen Jaminan <span class="required"></span></label>
+											<select name="dokumen_jaminan" id="dokumen_jaminan" class="form-control">
+												<option value="" selected disabled>Dokumen Jaminan</option>
+												<option value="SHM/SHGB">SHM/SHGB</option>
+												<option value="PPJB">PPJB</option>
+												<option value="AJB">AJB</option>
+												<option value="Girik">Girik</option>
+												<option value="BPKB">BPKB</option>
+											</select>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="lokasi_jaminan">Lokasi Jaminan <span class="required">*</span></label>
-									<select name="lokasi_jaminan" id="lokasi_jaminan" class="form-control">
-										<option value="" selected disabled>Lokasi Jaminan</option>
-										<option value="Bekasi Kota">Bekasi Kota</option>
-										<option value="Bekasi Kabupaten">Bekasi Kabupaten</option>
-										<option value="Bogor Kota">Bogor Kota</option>
-										<option value="Bogor Kabupaten">Bogor Kabupaten</option>
-										<option value="Depok Kota">Depok Kota</option>
-										<option value="Jakarta Timur">Jakarta Timur</option>
-										<option value="Jakarta Selatan">Jakarta Selatan</option>
-										<option value="Jakarta Barat">Jakarta Barat</option>
-										<option value="Jakarta Utara">Jakarta Utara</option>
-										<option value="Jakarta Pusat">Jakarta Pusat</option>
-										<option value="Tangerang Selatan">Tangerang Selatan</option>
-										<option value="Tangerang Kota">Tangerang Kota</option>
-										<option value="Tangerang Kabupaten">Tangerang Kabupaten</option>
-										<option value="Kota Serang">Kota Serang</option>
-										<option value="Kabupaten Karawang">Kabupaten Karawang</option>
-									</select>
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="lokasi_jaminan">Lokasi Jaminan <span class="required"></span></label>
+											<select name="lokasi_jaminan" id="lokasi_jaminan" class="form-control">
+												<option value="" selected disabled>Lokasi Jaminan</option>
+												<option value="Bekasi Kota">Bekasi Kota</option>
+												<option value="Bekasi Kabupaten">Bekasi Kabupaten</option>
+												<option value="Bogor Kota">Bogor Kota</option>
+												<option value="Bogor Kabupaten">Bogor Kabupaten</option>
+												<option value="Depok Kota">Depok Kota</option>
+												<option value="Jakarta Timur">Jakarta Timur</option>
+												<option value="Jakarta Selatan">Jakarta Selatan</option>
+												<option value="Jakarta Barat">Jakarta Barat</option>
+												<option value="Jakarta Utara">Jakarta Utara</option>
+												<option value="Jakarta Pusat">Jakarta Pusat</option>
+												<option value="Tangerang Selatan">Tangerang Selatan</option>
+												<option value="Tangerang Kota">Tangerang Kota</option>
+												<option value="Tangerang Kabupaten">Tangerang Kabupaten</option>
+											</select>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="jumlah_pinjaman">Jumlah Pinjaman <span class="required">*</span></label>
-									<input type="number" aria-required="true" size="30" value="" name="jumlah_pinjaman" id="jumlah_pinjaman" class="form-control" placeholder="Jumlah Pinjaman">
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="jumlah_pinjaman">Jumlah Pinjaman <span class="required"></span></label>
+											<input type="text" pattern="\d*" aria-required="true" size="30" value="" name="jumlah_pinjaman" id="jumlah_pinjaman" class="form-control" placeholder="Jumlah Pinjaman" inputmode="numeric">
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-lg-12 text-center">
-								<div class="form-group has-placeholder">
-									<label for="penghasilan">Penghasilan Per Bulan <span class="required">*</span></label>
-									<input type="number" aria-required="true" size="30" value="" name="penghasilan" id="penghasilan" class="form-control" placeholder="Penghasilan Per Bulan">
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-lg-12 text-center">
+										<div class="form-group has-placeholder">
+											<label for="penghasilan">Penghasilan Per Bulan <span class="required"></span></label>
+											<input type="text" pattern="\d*" aria-required="true" size="30" value="" name="penghasilan" id="penghasilan" class="form-control" placeholder="Penghasilan Per Bulan" inputmode="numeric">
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-sm-12 mb-0 mt-50">
-								<div class="form-group">
-									<button type="submit" name="submit" class="btn btn-gradient big-btn">Ajukan Kredit</button>
+								<div class="row c-mb-10 c-gutter-10">
+									<div class="col-sm-12 mb-0 mt-50">
+										<div class="form-group">
+											<button type="submit" name="submit" class="btn btn-gradient small-btn">Ajukan Kredit</button>
+										</div>
+									</div>
 								</div>
-							</div>
+								<div class="row c-mb-10 c-gutter-10">
+									<p style="line-height: 5px; text-align: center;">
+										<span style="font-weight: 400; font-size: 5px; color: rgb(255, 255, 255); background-color: rgba(227, 34, 34, 0); font-style: normal;">
+											Saya bersedia untuk dihubungi oleh BPR Prima Kredit Mandiri dan memberi kuasa kepada BPR Prima Kredit Mandiri untuk memeriksa informasi yang saya berikan di OJK melalui sistem SLIK
+										</span>
+									</p>
+								</div>
+							</form>
 						</div>
-					</form>
-				</div>
+					</div>
 			</section>
 
 				<section id="about-us" class="ls main-testimonial s-py-xl-160 s-py-lg-130 s-py-md-90 s-py-60">
@@ -411,7 +421,7 @@
 					</div>
 					<div class="info-box">
 						<div class="info-box-column">
-							{{-- <i class="info-box-icon fas fa-clock"></i> --}}
+							<!-- <i class="info-box-icon fas fa-clock"></i> -->
 							<img src="images/bpr/icon/Cepat.png" alt="icon" style="width: 50px; height: 50px;">
 							<h5>Cepat</h5>
 							<p>Kami akan segera memproses permohonan Anda sesaat setelah Anda mengisi Form Aplikasi, dan memberikan kepastian
@@ -419,16 +429,16 @@
 							</p>
 						</div>
 						<div class="info-box-column">
-							{{-- <i class="info-box-icon fas fa-check"></i> --}}
 							<img src="images/bpr/icon/Mudah.png" alt="icon" style="width: 50px; height: 50px;">
+							<!-- <img src="images/bpr/icon/Mudah.webp" alt="icon"> -->
 							<h5>Mudah</h5>
 							<p>Kami selalu mencoba mengerti kebutuhan Anda. Akan menyarankan Produk keuangan terbaik dan sesuai untuk keperluan
 								Anda. Ceritakan kepada Kami kebutuhan Anda saat ini.
 							</p>
 						</div>
 						<div class="info-box-column">
-							{{-- <i class="info-box-icon fas fa-shield-alt"></i> --}}
 							<img src="images/bpr/icon/Aman.png" alt="icon" style="width: 50px; height: 50px;">
+							<!-- <img src="images/bpr/icon/Aman.webp" alt="icon"> -->
 							<h5>Aman</h5>
 							<p>Kami didukung oleh tim yang profesional dan siap membantu Anda. Juga telah terdaftar dan diawasi oleh Otoritas Jasa Keuangan
 								dan merupakan Peserta Penjaminan Lembaga Penjamin Simpanan.
@@ -449,7 +459,7 @@
 							<div class="icon-box service-single with-icon layout2 ds text-center">
 								<a class="link-icon" href="">
 									<div class="icon-styled  fs-50">
-										{{-- <i class="far fa-file-alt"></i> --}}
+										<!-- <i class="far fa-file-alt"></i> -->
                                         <img src="images/bpr/icon/Ajukan Kredit.png" alt="icon" style="width: 50px; height: 50px;">
 									</div>
 								</a>
@@ -466,7 +476,7 @@
 							<div class="icon-box service-single with-icon layout2 ds text-center">
 								<a class="link-icon" href="">
 									<div class="icon-styled  fs-50">
-										{{-- <i class="far fa-envelope"></i> --}}
+										<!-- <i class="far fa-envelope"></i> -->
                                         <img src="images/bpr/icon/Kami Merespon.png" alt="icon" style="width: 50px; height: 50px;">
 									</div>
 								</a>
@@ -483,7 +493,7 @@
 							<div class="icon-box service-single with-icon layout2 ds text-center">
 								<a class="link-icon" href="">
 									<div class="icon-styled  fs-50">
-										{{-- <i class="fas fa-check-square"></i> --}}
+										<!-- <i class="fas fa-check-square"></i> -->
                                         <img src="images/bpr/icon/Proses Survey.png" alt="icon" style="width: 50px; height: 50px;">
 									</div>
 								</a>
@@ -500,7 +510,7 @@
 							<div class="icon-box service-single with-icon layout2 ds text-center">
 								<a class="link-icon" href="">
 									<div class="icon-styled  fs-50">
-										{{-- <i class="fas fa-coins"></i> --}}
+										<!-- <i class="fas fa-coins"></i> -->
                                         <img src="images/bpr/icon/Pencairan Dana.png" alt="icon" style="width: 50px; height: 50px;">
 									</div>
 								</a>
@@ -542,7 +552,8 @@
 							</div> -->
 							<div class="info-box">
 								<div class="info-box-column2">
-									<i class="info-box-icon2 fas fa-credit-card"></i>
+									<!-- <i class="info-box-icon2 fas fa-credit-card"></i> -->
+									<img src="images/bpr/icon/Kredit multiguna.png" alt="icon" style="width: 50px; height: 50px;">
 									<h5>KREDIT MULTIGUNA</h5>
 									<p>Plafon mulai dari 50 juta hingga 2 miliar.
 										Tenor fleksibel dari 12 bulan hingga 60 bulan.
@@ -554,7 +565,8 @@
 									</p>
 								</div>
 								<div class="info-box-column2">
-									<i class="info-box-icon2 fas fa-money-bill-wave"></i>
+									<!-- <i class="info-box-icon2 fas fa-money-bill-wave"></i> -->
+									<img src="images/bpr/icon/Kredit dana.png" alt="icon" style="width: 50px; height: 50px;">
 									<h5>KREDIT DANA XPRES</h5>
 									<p>Plafon mulai dari 10 juta hingga 100 juta.
 										Tenor dari 12 bulan hingga 60 bulan sesuai plafon kredit.
