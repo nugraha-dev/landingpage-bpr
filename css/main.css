@@ -31517,7 +31517,7 @@ img.absolute_image {
     width: 80%; /* Gunakan persentase untuk lebar formulir */
     max-width: 400px; /* Batasan maksimum lebar formulir */
     position: absolute; /* Gunakan posisi absolut untuk mengatur formulir di dalam banner */
-    top: 60%; /* Pusatkan formulir secara vertikal */
+    top: 55%; /* Pusatkan formulir secara vertikal */
     right: 10px; /* Geser formulir ke kanan sesuai kebutuhan */
     transform: translateY(-50%); /* Menengahkan formulir secara vertikal */
     padding: 20px; /* Tambahkan jarak dari tepi formulir ke kontennya */
@@ -31543,4 +31543,19 @@ img.absolute_image {
 		padding-bottom: 20px;
 		padding-left: 20px;
     }
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.col-sm-12 {
+    text-align: center;
+}
+
+.button-form {
+    display: inline-block; /* Memastikan tombol berada dalam kontainer inline */
 }
