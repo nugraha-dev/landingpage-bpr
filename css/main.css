@@ -337,6 +337,7 @@ strong {
 
 label {
 	color: #00407a;
+	height: 50px;
 }
 
 a {
@@ -758,16 +759,17 @@ input[type="password"],
 input[type="search"],
 input[type="tel"],
 input[type="number"],
+input[type="select"],
 textarea,
 select,
 .form-control {
 	border: 2px solid #f2f5f7;
 	box-shadow: none;
 	color: #999;
-	font-size: 16px;
-	font-weight: 300;
+	font-size: 5px;
+	font-weight: 100;
 	height: auto !important;
-	line-height: 30px;
+	line-height: 15px;
 	padding: 8px 30px;
 	width: 100%;
 }
@@ -879,6 +881,7 @@ textarea.form-control {
 
 .has-placeholder label {
 	display: none;
+	/* font-size: 5px; */
 }
 
 /* select styling */
@@ -937,7 +940,7 @@ select option,
 }
 
 .form-control::-webkit-input-placeholder {
-	color: #999;
+	color: #13408e;
 	opacity: 1;
 	-webkit-transform: translateX(0%);
 	transform: translateX(0%);
@@ -999,7 +1002,7 @@ form label + [class*="fa-"] + .form-control {
 }
 
 label {
-	color: #999;
+	color: #e6ecf1;
 	font-size: 16px;
 	font-weight: 500;
 	letter-spacing: 0;
@@ -26542,7 +26545,7 @@ a img.aligncenter {
 	.top-nav .menu-item-has-mega-menu:hover .mega-menu {
 		display: block;
 	}
-	/* row */
+
 	.top-nav .mega-menu-row {
 		display: table;
 		position: static;
@@ -26553,7 +26556,7 @@ a img.aligncenter {
 		display: block;
 		position: static;
 	}
-	/* column */
+
 	.top-nav .mega-menu-col {
 		border-bottom: none !important;
 		display: table-cell;
@@ -31389,7 +31392,8 @@ img.absolute_image {
 
 #nama, #nomor, #pekerjaan, #domisili, #jenis_jaminan, #dokumen_jaminan, #lokasi_jaminan, #jumlah_pinjaman, #penghasilan {
 	background-color: #fff;
-	color: #a6a6a6;
+	color: #13408e;
+	font-size: 10px;
 }
 
 .table-container {
@@ -31497,28 +31501,46 @@ img.absolute_image {
 
 .flexslider {
     position: relative;
-    width: auto; /* Sesuaikan dengan lebar yang Anda inginkan */
-    height: auto; /* Sesuaikan dengan tinggi yang Anda inginkan */
+    width: auto;
+    height: auto;
+}
+
+.form-control {
+	height: 100%;
 }
 
 /* Gaya dasar untuk form */
 .form-wrapper {
-    position: fixed;
-    top: 50%; /* Pusatkan secara vertikal di tengah layar */
-    right: 0; /* Letakkan di sebelah kanan */
-    transform: translateY(-50%); /* Geser ke atas sejauh setengah tinggi form */
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    width: 40%;
-	height: 100%;
+    background: #044ca4;
+	border: 5px solid white;
+    border-radius: 14px;
+    width: 80%; /* Gunakan persentase untuk lebar formulir */
+    max-width: 400px; /* Batasan maksimum lebar formulir */
+    position: absolute; /* Gunakan posisi absolut untuk mengatur formulir di dalam banner */
+    top: 60%; /* Pusatkan formulir secara vertikal */
+    right: 10px; /* Geser formulir ke kanan sesuai kebutuhan */
+    transform: translateY(-50%); /* Menengahkan formulir secara vertikal */
+    padding: 20px; /* Tambahkan jarak dari tepi formulir ke kontennya */
+    z-index: 2;
+    color: white; /* Atur warna teks formulir */
+	margin-right: 50px;
 }
 
 /* Gaya untuk layar ponsel (ukuran layar kurang dari 768px) */
 @media (max-width: 768px) {
     .form-wrapper {
-        width: 50%;
+        width: auto;
         padding: 50px;
         position: static; /* Kembalikan posisi ke statis untuk layout ponsel */
         transform: translateY(0); /* Hapus transform pada layar ponsel */
+		margin-top: 10px;
+		margin-right: 20px;
+		margin-bottom: 30px;
+		margin-left: 20px;
+		
+		padding-top: 10px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
     }
 }
