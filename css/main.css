@@ -31512,18 +31512,18 @@ img.absolute_image {
 /* Gaya dasar untuk form */
 .form-wrapper {
     background: #044ca4;
-	border: 5px solid white;
+    border: 5px solid white;
     border-radius: 14px;
-    width: 80%; /* Gunakan persentase untuk lebar formulir */
+    width: 25%; /* Gunakan persentase untuk lebar formulir */
     max-width: 400px; /* Batasan maksimum lebar formulir */
-    position: absolute; /* Gunakan posisi absolut untuk mengatur formulir di dalam banner */
-    top: 55%; /* Pusatkan formulir secara vertikal */
+    position: absolute;
+    top: 50%; /* Pusatkan formulir secara vertikal */
     right: 10px; /* Geser formulir ke kanan sesuai kebutuhan */
     transform: translateY(-50%); /* Menengahkan formulir secara vertikal */
     padding: 20px; /* Tambahkan jarak dari tepi formulir ke kontennya */
     z-index: 2;
     color: white; /* Atur warna teks formulir */
-	margin-right: 50px;
+    margin-right: 50px;
 }
 
 /* Gaya untuk layar ponsel (ukuran layar kurang dari 768px) */
