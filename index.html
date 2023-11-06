@@ -199,26 +199,23 @@
 								</a>
 							</div>
 							<div class="col-xl-6 col-1 text-left">
-								<!-- main nav start -->
 								<nav class="top-nav">
 									<ul class="nav sf-menu">
-										<li>
+										<!-- <li>
 											<a href="#home">Home</a>
-										</li>
+										</li> -->
 
 										<!-- <li>
 											<a href="#about-us">About Us</a>
 										</li>									 -->
 
-										<li>
+										<!-- <li>
 											<a href="#product">Our Product</a>
-										</li>
+										</li> -->
 
-										<li>
+										<!-- <li>
 											<a href="#contact">Contact Us</a>
-										</li>
-
-
+										</li> -->
 									</ul>
 								</nav>
 							</div>
@@ -290,8 +287,14 @@
 											<label for="pekerjaan">Pekerjaan <span class="required"></span></label>
 											<select name="pekerjaan" id="pekerjaan" aria-required="true" class="form-control">
 												<option value="" selected disabled>Pekerjaan</option>
-												<option value="PT/Perusahaan">PT/Perusahaan</option>
+												<option value="Karyawan Swasta">Karyawan Swasta</option>
+												<option value="ASN">ASN</option>
+												<option value="TNI/POLRI">TNI/POLRI</option>
 												<option value="Profesional">Profesional</option>
+												<option value="Wiraswasta">Wiraswasta</option>
+												<option value="PT/Perusahaan">PT/Perusahaan</option>
+												<option value="Pekerjaan Lainnya">Pekerjaan Lainnya</option>
+												<option value="Tidak Bekerja">Tidak Bekerja</option>
 											</select>
 										</div>
 									</div>
@@ -330,7 +333,7 @@
 												<option value="Apartemen">Apartemen</option>
 												<option value="Kontrakan">Kontrakan</option>
 												<option value="Kios">Kios</option>
-												<option value="Gedung">Gedung</option>
+												<option value="Gudang">Gudang</option>												
 												<option value="Hotel">Hotel</option>
 												<option value="Gedung">Gedung</option>
 												<option value="Tanah Kosong">Tanah Kosong</option>
@@ -394,16 +397,40 @@
 										</div>
 									</div>
 								</div>
+								<script>
+									// Ambil elemen input dengan ID "jumlah_pinjaman"
+									var inputElement = document.getElementById("jumlah_pinjaman");
+
+									// Ambil elemen input dengan ID "penghasilan"
+    								var penghasilanElement = document.getElementById("penghasilan");
+								
+									// Tambahkan event listener untuk memantau perubahan
+									inputElement.addEventListener("input", function (e) {
+										// Hapus semua karakter selain angka (termasuk tanda titik)
+										var sanitizedValue = e.target.value.replace(/[^0-9]/g, "");
+								
+										// Format angka dengan pemisah ribuan tanda titik
+										var formattedValue = "Rp " + numberWithCommas(sanitizedValue);
+								
+										// Update nilai input dengan yang telah diformat
+										e.target.value = formattedValue;
+									});
+								
+									// Fungsi untuk menambahkan tanda titik sebagai pemisah ribuan
+									function numberWithCommas(x) {
+										return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+									}
+								</script>
 								<div class="row c-mb-10 c-gutter-10">
 									<div class="col-sm-12 mb-0 mt-50">
 										<div class="button-form">
-											<button type="submit" name="submit" class="btn btn-gradient small-btn">Ajukan Kredit</button>
+											<button type="submit" name="submit" class="btn custom-small-btn">Ajukan Kredit</button>
 										</div>
 									</div>
 								</div>
 								<div class="row c-mb-10 c-gutter-10">
-									<p style="line-height: 10px; text-align: center;">
-										<span style="font-weight: 400; font-size: 11px; color: rgb(255, 255, 255); background-color: rgba(227, 34, 34, 0); font-style: normal;">
+									<p class="custom-paragraph">
+										<span style="font-weight: 400; font-size: 8px; color: rgb(255, 255, 255); background-color: rgba(227, 34, 34, 0); font-style: normal;">
 											Saya bersedia untuk dihubungi oleh BPR Prima Kredit Mandiri dan memberi kuasa kepada BPR Prima Kredit Mandiri untuk memeriksa informasi yang saya berikan di OJK melalui sistem SLIK
 										</span>
 									</p>
@@ -456,11 +483,11 @@
 				<div class="container-fluid">
 					<div class="row service-v2">
 						<div class="col-md-3"> <!-- 25% lebar, 4 kolom x 25% = 100% -->
-							<div class="icon-box service-single with-icon layout2 ds text-center">
+							<div class="text-center">
 								<a class="link-icon" href="">
 									<div class="icon-styled  fs-50">
 										<!-- <i class="far fa-file-alt"></i> -->
-                                        <img src="images/bpr/icon/Ajukan Kredit.png" alt="icon" style="width: 50px; height: 50px;">
+                                        <img src="images/bpr/icon/Ajukan Kredit.png" alt="icon" style="width: 50px; height: 50px; margin-bottom: 20px;">
 									</div>
 								</a>
 								<a href="">
@@ -473,11 +500,11 @@
 							</div>
 						</div>
 						<div class="col-md-3">
-							<div class="icon-box service-single with-icon layout2 ds text-center">
+							<div class="text-center">
 								<a class="link-icon" href="">
 									<div class="icon-styled  fs-50">
 										<!-- <i class="far fa-envelope"></i> -->
-                                        <img src="images/bpr/icon/Kami Merespon.png" alt="icon" style="width: 50px; height: 50px;">
+                                        <img src="images/bpr/icon/Kami Merespon.png" alt="icon" style="width: 50px; height: 50px; margin-bottom: 20px;">
 									</div>
 								</a>
 								<a href="">
@@ -490,11 +517,11 @@
 							</div>
 						</div>
 						<div class="col-md-3">
-							<div class="icon-box service-single with-icon layout2 ds text-center">
+							<div class="text-center">
 								<a class="link-icon" href="">
 									<div class="icon-styled  fs-50">
 										<!-- <i class="fas fa-check-square"></i> -->
-                                        <img src="images/bpr/icon/Proses Survey.png" alt="icon" style="width: 50px; height: 50px;">
+                                        <img src="images/bpr/icon/Proses Survey.png" alt="icon" style="width: 50px; height: 50px; margin-bottom: 20px;">
 									</div>
 								</a>
 								<a href="">
@@ -507,11 +534,11 @@
 							</div>
 						</div>
 						<div class="col-md-3">
-							<div class="icon-box service-single with-icon layout2 ds text-center">
+							<div class="text-center">
 								<a class="link-icon" href="">
 									<div class="icon-styled  fs-50">
 										<!-- <i class="fas fa-coins"></i> -->
-                                        <img src="images/bpr/icon/Pencairan Dana.png" alt="icon" style="width: 50px; height: 50px;">
+                                        <img src="images/bpr/icon/Pencairan Dana.png" alt="icon" style="width: 50px; height: 50px; margin-bottom: 20px;">
 									</div>
 								</a>
 								<a href="">
@@ -519,43 +546,30 @@
 										Pencairan Dana
 									</h5>
 								</a>
-								<p>Jika pengajuan Anda disetujui, Anda akan dihubungi oleh petugas Kami untuk menerima pencairan dana.</p>
+								<p>Jika pengajuan Anda disetujui, Anda akan di hubungi oleh petugas Kami untuk menerima pencairan dana.</p>
 							</div>
 						</div>
 					</div>
 				</div>				
 			</section>
 
-			<section id="product" class="ds s-overlay portfolio-section  s-py-xl-160 s-py-lg-130 s-py-md-90 s-py-60 text-center">
-				<div class="container">
+			<section id="product" class="ls main-testimonial s-py-xl-160 s-py-lg-130 s-py-md-90 s-py-60">
 					<div class="row">
 						<div class="col-12">
-							<h2 class="special-heading text-center">
-								<span class="text-capitalize">
-									PRODUK TERBAIK KAMI
-								</span>
-							</h2>
+							<div class="center-element">
+								<div>
+									<h5>PRODUK TERBAIK KAMI</h5>
+								</div>
+							</div>
 							<div class="divider-50 hidden-below-lg"></div>
 							<div class="divider-30 hidden-above-lg"></div>
-							<!-- <div class="row justify-content-center">
-								<div class="col-md-10 col-xl-8">
-									<div class="filters gallery-filters">
-										<a href="#" data-filter="*" class="active selected">show All</a>
-										<a href="#" data-filter=".corporate">Gas</a>
-										<a href="#" data-filter=".business">oil</a>
-										<a href="#" data-filter=".entertainment">Industry</a>
-										<a href="#" data-filter=".innovations">eco</a>
-										<a href="#" data-filter=".news">Factory</a>
 
-									</div>
-								</div>
-							</div> -->
 							<div class="info-box">
 								<div class="info-box-column2">
-									<!-- <i class="info-box-icon2 fas fa-credit-card"></i> -->
-									<img src="images/bpr/icon/Kredit multiguna.png" alt="icon" style="width: 50px; height: 50px;">
+									<img src="images/bpr/icon/Kredit multiguna black.png" alt="icon" style="width: 50px; height: 50px;">
 									<h5>KREDIT MULTIGUNA</h5>
-									<p>Plafon mulai dari 50 juta hingga 2 miliar. 
+									<p style="color: #003b71;">
+										Plafon mulai dari 50 juta hingga 2 miliar. 
 										Tenor fleksibel dari 12 bulan hingga 60 bulan.
 										Angsuran flat (tidak berubah) hingga masa akhir kredit.
 										Jaminan SHM/SHGB rumah atau ruko di perumahan
@@ -565,31 +579,32 @@
 									</p>
 								</div>
 								<div class="info-box-column2">
-									<!-- <i class="info-box-icon2 fas fa-money-bill-wave"></i> -->
-									<img src="images/bpr/icon/Kredit dana.png" alt="icon" style="width: 50px; height: 50px;">
+									<img src="images/bpr/icon/Kredit dana black.png" alt="icon" style="width: 50px; height: 50px;">
 									<h5>KREDIT DANA XPRES</h5>
-									<p>Plafon mulai dari 10 juta hingga 100 juta.
+									<p style="color: #003b71;">
+										Plafon mulai dari 10 juta hingga 100 juta.
 										Tenor dari 12 bulan hingga 60 bulan sesuai plafon kredit.
 										Angsuran flat (tidak berubah) hingga masa akhir kredit.
 										Jaminan SHM/SHGB rumah di perkampungan
-										yang hanya dapat dilalui motor (tidak masuk mobil).<br>
+										yang hanya dapat dilalui motor (tidak masuk mobil).
 										Dapat digunakan untuk berbagai kebutuhan Anda. Bisa takeover dari bank lain.
 									</p>
 								</div>
 							</div>
+						</div>
+					</div>
+			</section>
 
-							<div class="mt--30"></div>
-							<div class="row">
-								<div class="col-lg-12">
-									<div class="divider-60"></div>
-										<h5>Dapatkan Pinjaman Hingga 2 Miliar<br>
-										Cepat & Mudah</h5>
-									</div>
-								</div>
-								<div class="col-lg-12">
-									<div class="divider-60"></div>
-									<a class="btn btn-gradient big-btn" href="https://wa.me/0811877875">AJUKAN SEKARANG</a>
-								</div>
+			<section id="" class="ds text-sm-left text-center container-px-0 c-gutter-0">
+				<div class="center-element">
+					<div class="col-lg-12">
+						<h5>Dapatkan Pinjaman Hingga 2 Miliar<br>
+						Cepat & Mudah</h5>
+						<div class="row c-mb-10 c-gutter-10">
+							<div class="col-sm-12 mb-0 mt-50">
+								<div class="button-form">
+									<a href="https://wa.me/0811877875" class="btn custom-small-btn">AJUKAN SEKARANG</a>
+								</div>								
 							</div>
 						</div>
 					</div>
