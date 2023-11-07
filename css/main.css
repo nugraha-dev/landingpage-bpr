@@ -248,7 +248,7 @@ h3:last-child,
 h4:last-child,
 h5:last-child,
 h6:last-child {
-	margin-bottom: 0;
+	margin-bottom: 10;
 }
 
 p {
@@ -443,6 +443,7 @@ table {
 	margin: 10px 0;
 	max-width: 100%;
 	width: 100%;
+	border-radius: 10px;
 }
 
 table td,
@@ -30217,6 +30218,7 @@ img.absolute_image {
 .page_footer {
 	overflow: visible;
 	position: relative;
+	
 	/*overriding Bootstrap Addons buttons*/
 }
 
@@ -31264,14 +31266,14 @@ img.absolute_image {
 .footer-logo {
     display: flex;
     align-items: center;
-    /* margin: 20px;
-    padding: 20px; */
-	/* margin-top: 10px; */
+    margin: 20px;
+    padding: 20px;
+	margin-top: 10px;
 	margin-right: 20px;
 	margin-bottom: 30px;
 	margin-left: 20px;
 	
-	/* padding-top: 10px; */
+	padding-top: 10px;
 	padding-right: 20px;
 	padding-bottom: 40px;
 	padding-left: 20px;
@@ -31402,19 +31404,20 @@ img.absolute_image {
 
 .table-container {
     display: flex;
-    border-color: #035db0;
     justify-content: center;
     align-items: center;
     overflow-x: auto;
 }
-  
+
 .table-left, .table-right {
     padding: 10px;
-    border-color: #035db0;
+    /* border-color: #035db0; */
+	/* border-radius: 100px; */
+    overflow: hidden; /* Memastikan elemen berbentuk rounded */
 }
   
   .table-left td {
-	border: 2px solid #035db0; /* Mengatur garis pemisah pada sel */
+	border: 2px solid #035db0;
 	padding: 5px; /* Menambahkan ruang di sekitar konten sel */
 	text-align: center;
 	color: #003869;
@@ -31422,11 +31425,11 @@ img.absolute_image {
   
   .table-left table, .table-right table {
     width: 50%; /* Mengisi seluruh lebar tabel */
-	border-radius: 10px !important;
+	/* border-radius: 10px !important; */
 }
   
   .table-right td {
-	border: 2px solid #035db0; /* Mengatur garis pemisah pada sel */
+	border: 2px solid #035db0;
 	padding: 5px; /* Menambahkan ruang di sekitar konten sel */
 	text-align: center;
 	color: #003869;
@@ -31444,6 +31447,7 @@ img.absolute_image {
     }
     .table-left, .table-right {
         width: 100%; /* Mengisi seluruh lebar container pada layar kecil */
+		overflow-x: scroll;
     }
 }	
 
@@ -31576,4 +31580,10 @@ p.custom-paragraph {
     line-height: 7px;
     text-align: center;
 	padding: 0;
+}
+
+.custom-footer {
+	text-align: center;
+	color: #003b71;
+	margin-top: 5px;
 }
