@@ -31465,7 +31465,8 @@ img.absolute_image {
     }
     .table-left td, .table-right td {
         white-space: nowrap; /* Mencegah teks memecah ke baris baru */
-		font-size: 6px;
+		font-size: 5px;
+		align-items: left;
     }
 }
 
