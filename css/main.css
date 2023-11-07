@@ -31455,6 +31455,8 @@ img.absolute_image {
     .table-container {
         flex-direction: column; /* Mengatur tampilan tabel dalam satu kolom */
         align-items: center; /* Mengatur tabel agar berada di tengah */
+		margin: 0;
+		padding: 0;
     }
     .table-left, .table-right {
         width: 100%; /* Mengisi seluruh lebar container pada layar kecil */
@@ -31465,9 +31467,15 @@ img.absolute_image {
     }
     .table-left td, .table-right td {
         white-space: nowrap; /* Mencegah teks memecah ke baris baru */
-		font-size: 5px;
+		font-size: 8px;
 		align-items: left;
-    }
+	}
+
+	.center-element {
+		text-align: center;
+		margin: 0;
+		padding: 0;
+	}
 }
 
   p {
