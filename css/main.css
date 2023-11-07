@@ -31440,6 +31440,17 @@ img.absolute_image {
   }
 
 /* Responsif untuk layar yang lebih kecil */
+/* @media screen and (max-width: 599px) {
+    .table-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .table-left, .table-right {
+        width: 100%;
+		overflow-x: scroll;
+    }
+}	 */
+
 @media screen and (max-width: 599px) {
     .table-container {
         flex-direction: column; /* Mengatur tampilan tabel dalam satu kolom */
@@ -31447,9 +31458,16 @@ img.absolute_image {
     }
     .table-left, .table-right {
         width: 100%; /* Mengisi seluruh lebar container pada layar kecil */
-		overflow-x: scroll;
     }
-}	
+    .table-left table, .table-right table {
+        width: 100%; /* Mengisi seluruh lebar tabel */
+        table-layout: fixed; /* Mengatur lebar kolom tabel tetap */
+    }
+    .table-left td, .table-right td {
+        white-space: nowrap; /* Mencegah teks memecah ke baris baru */
+		font-size: 6px;
+    }
+}
 
   p {
 	margin-top: 10px;
