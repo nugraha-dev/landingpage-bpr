@@ -261,7 +261,7 @@
 								<div class="row c-mb-20">
 									<div class="col-12 form-title text-center form-builder-item" style="margin-bottom: 0;">
 										<div class="header-title">
-											<h6 style="color: white;">Ajukan Kredit Sekarang</h6>
+											<h5 style="color: white;">Ajukan Kredit Sekarang</h5>
 										</div>
 									</div>
 								</div>
@@ -398,29 +398,32 @@
 									</div>
 								</div>
 								<script>
-									// Ambil elemen input dengan ID "jumlah_pinjaman"
-									var inputElement = document.getElementById("jumlah_pinjaman");
+                                    // Ambil elemen input dengan ID "jumlah_pinjaman"
+                                    var jumlahPinjamanElement = document.getElementById("jumlah_pinjaman");
+                                
+                                    // Ambil elemen input dengan ID "penghasilan"
+                                    var penghasilanElement = document.getElementById("penghasilan");
+                                
+                                    // Tambahkan event listener untuk memantau perubahan jumlah_pinjaman
+                                    jumlahPinjamanElement.addEventListener("input", function (e) {
+                                        var sanitizedValue = e.target.value.replace(/[^0-9]/g, "");
+                                        var formattedValue = "Rp " + numberWithCommas(sanitizedValue);
+                                        e.target.value = formattedValue;
+                                    });
+                                
+                                    // Tambahkan event listener untuk memantau perubahan penghasilan
+                                    penghasilanElement.addEventListener("input", function (e) {
+                                        var sanitizedValue = e.target.value.replace(/[^0-9]/g, "");
+                                        var formattedValue = "Rp " + numberWithCommas(sanitizedValue);
+                                        e.target.value = formattedValue;
+                                    });
+                                
+                                    // Fungsi untuk menambahkan tanda titik sebagai pemisah ribuan
+                                    function numberWithCommas(x) {
+                                        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                                    }
+                                </script>
 
-									// Ambil elemen input dengan ID "penghasilan"
-    								var penghasilanElement = document.getElementById("penghasilan");
-								
-									// Tambahkan event listener untuk memantau perubahan
-									inputElement.addEventListener("input", function (e) {
-										// Hapus semua karakter selain angka (termasuk tanda titik)
-										var sanitizedValue = e.target.value.replace(/[^0-9]/g, "");
-								
-										// Format angka dengan pemisah ribuan tanda titik
-										var formattedValue = "Rp " + numberWithCommas(sanitizedValue);
-								
-										// Update nilai input dengan yang telah diformat
-										e.target.value = formattedValue;
-									});
-								
-									// Fungsi untuk menambahkan tanda titik sebagai pemisah ribuan
-									function numberWithCommas(x) {
-										return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-									}
-								</script>
 								<div class="row c-mb-10 c-gutter-10">
 									<div class="col-sm-12 mb-0 mt-50">
 										<div class="button-form">
@@ -556,7 +559,7 @@
 			<section id="product" class="ls main-testimonial s-py-xl-160 s-py-lg-130 s-py-md-90 s-py-60">
 					<div class="row">
 						<div class="col-12">
-							<div class="center-element">
+							<div class="center-element" style="margin-top: 50px;">
 								<div>
 									<h5>PRODUK TERBAIK KAMI</h5>
 								</div>
@@ -571,10 +574,10 @@
 									<p style="color: #003b71;">
 										Plafon mulai dari 50 juta hingga 2 miliar. 
 										Tenor fleksibel dari 12 bulan hingga 60 bulan.
-										Angsuran flat (tidak berubah) hingga masa akhir kredit.
+										Angsuran flat (tidak berubah) hingga akhir masa kredit.
 										Jaminan SHM/SHGB rumah atau ruko di perumahan
 										atau cluster yang dapat dilalui 2 kendaraan roda 4.
-										Dapat digunakan untuk berbagai kebutuhan Anda.<br>
+										Dapat digunakan untuk berbagai kebutuhan Anda.
 										Bisa takeover dari bank lain.<br>
 									</p>
 								</div>
@@ -584,7 +587,7 @@
 									<p style="color: #003b71;">
 										Plafon mulai dari 10 juta hingga 100 juta.
 										Tenor dari 12 bulan hingga 60 bulan sesuai plafon kredit.
-										Angsuran flat (tidak berubah) hingga masa akhir kredit.
+										Angsuran flat (tidak berubah) hingga akhir masa kredit.
 										Jaminan SHM/SHGB rumah di perkampungan
 										yang hanya dapat dilalui motor (tidak masuk mobil).
 										Dapat digunakan untuk berbagai kebutuhan Anda. Bisa takeover dari bank lain.
@@ -601,11 +604,11 @@
 						<h5>Dapatkan Pinjaman Hingga 2 Miliar<br>
 						Cepat & Mudah</h5>
 						<div class="row c-mb-10 c-gutter-10">
-							<div class="col-sm-12 mb-0 mt-50">
+							<!-- <div class="col-sm-12 mb-0 mt-50"> -->
 								<div class="button-form">
-                                    <a href="https://wa.me/0811877875" class="btn custom-small-btn" style="margin-top: 0; margin-bottom: 20px;">AJUKAN SEKARANG</a>
+                                    <a href="https://wa.me/0811877875" class="btn custom-medium-btn" style="margin-top: 0;">AJUKAN SEKARANG</a>
                                 </div>                                                                
-							</div>
+							<!-- </div> -->
 						</div>
 					</div>
 				</div>
@@ -613,7 +616,7 @@
 
 			<section id="persyaratan-dokumen" class="ls main-testimonial s-py-xl-160 s-py-lg-130 s-py-md-90 s-py-60">
 				<div class="center-element">
-					<div>
+					<div style="margin-top: 20px;">
 						<h5>PERSYARATAN DOKUMEN PENGAJUAN</h5>
 					</div>
 				</div>
@@ -651,7 +654,7 @@
 				</div>
 
 				<div class="center-element">
-                    <h5>ILUSTRASI ANGSURAN</h5>
+                    <h5 style="margin-top: 20px;">ILUSTRASI ANGSURAN</h5>
                     <div class="table-container">
                         <div class="table-left">
                             <table>
@@ -800,8 +803,8 @@
 							</p> -->
 
 							<div class="image-container">
-								<img src="images/bpr/4.jpg" alt="Nomor Telepon" onclick="window.location.href='tel:0811877875';" style="width: 100%; max-width: 200px; height: auto;">
-								<img src="images/bpr/5.jpg" alt="Nomor Whatsapp" onclick="window.location.href='https://wa.me/0811877875';" style="width: 100%; max-width: 200px; height: auto;">
+								<img src="images/bpr/4.jpg" alt="Nomor Telepon" onclick="window.location.href='tel:0811877875';">
+								<img src="images/bpr/5.jpg" alt="Nomor Whatsapp" onclick="window.location.href='https://wa.me/0811877875';">
 							</div>
 
 						</div>
@@ -813,7 +816,7 @@
 									Alamat BPR Prima Kredit Mandiri							
 								</span>
 							</h6>
-							<p align="center" style="text-align: center;">
+							<p align="center" style="text-align: center; margin: 0;">
 								Kantor Pusat :<br>
 								Jl. Curug Sangereng Ruko L'Agricola Blok
 								B26-27, Gading Serpong, Banten 15811
@@ -821,22 +824,22 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-12 col-lg-3">
-							<p align="center" style="text-align: left;">
-								Cabang Karawaci:<br>
-								Jl. Beringin Raya No. 150A
-								RT. 003 RW. 002
-								Kel. Nusa Jara
-								Kec. Karawaci Tangerang 15116
-							</p>
+						<div class="col-12 col-lg-3 custom-text">
+							<p align="center" style="text-align: left; color: #003b71;">
+                                Cabang Karawaci:<br>
+                                Jl. Beringin Raya No. 150A
+                                RT. 003 RW. 002
+                                Kel. Nusa Jara
+                                Kec. Karawaci Tangerang 15116
+                            </p>                            
 						</div>
-						<div class="col-12 col-lg-3">
+						<div class="col-12 col-lg-3 custom-text">
 							<!-- <h6 class="special-heading">
 								<p align="left" style="text-align: left;">
 									Cabang Gading Serpong:							
 								</p>
 							</h6> -->
-							<p align="left" style="text-align: left;">
+							<p align="center" style="text-align: left; color: #003b71;">
 								Cabang Gading Serpong:<br>
 								Jl. Curug Sangereng Ruko L'Agricola
 								Blok B26-27,
@@ -844,16 +847,16 @@
 								Banten 15811
 							</p>
 						</div>
-						<div class="col-12 col-lg-3">
-							<p align="left" style="text-align: left;">
+						<div class="col-12 col-lg-3 custom-text">
+							<p align="center" style="text-align: left; color: #003b71;">
 								Cabang BSD:<br>
 								Ruko Tol Boulevard Blok F No.25,
 								Jl. Kapten Soebijanto Djojohadikusumo,
 								Serpong, Tangerang Selatan 15318
 							</p>
 						</div>
-						<div class="col-12 col-lg-3">
-							<p align="left" style="text-align: left;">
+						<div class="col-12 col-lg-3 custom-text">
+							<p align="center" style="text-align: left; color: #003b71;">
 								Cabang Bintaro:<br>
 								Ruko Althia Boulevard Blok GB/AP-20
 								Jl.Graha Bintaro Jaya Tangerang Selatan
@@ -861,9 +864,8 @@
 						</div>
 					</div>
 					<div class="row">
-						<div class="col-12 col-lg-3">
-
-							<p align="left" style="text-align: left;">
+						<div class="col-12 col-lg-3 custom-text">
+							<p align="center" style="text-align: left; color: #003b71;">
 								Cabang Ciledug:<br>
 								Jl. Raden Saleh No.4, RT.004/RW.005,
 								Karang Tengah,
@@ -871,8 +873,8 @@
 								Selatan 15151
 							</p>
 						</div>
-						<div class="col-12 col-lg-3">
-							<p align="left" style="text-align: left;">
+						<div class="col-12 col-lg-3 custom-text">
+							<p align="center" style="text-align: left; color: #003b71;">
 								Cabang Ciputat:<br>
 								Jl. Dewi Sartika Kav 3 No.B8, Ciputat,
 								Pisangan,
@@ -880,15 +882,15 @@
 								Selatan 15151
 							</p>
 						</div>
-						<div class="col-12 col-lg-3">
-							<p align="left" style="text-align: left;">
+						<div class="col-12 col-lg-3 custom-text">
+							<p align="center" style="text-align: left; color: #003b71;">
 								Cabang Depok:<br>
 								Jl. Margonda Raya No.263E
 								Depok Jawa Barat
 							</p>
 						</div>
-						<div class="col-12 col-lg-3">
-							<p align="left" style="text-align: left;">
+						<div class="col-12 col-lg-3 custom-text">
+							<p align="center" style="text-align: left; color: #003b71;">
 								Cabang Cibinong:<br>
 								Ruko Mayor Oking II Blok B1 No.1,
 								Jl. Mayor Oking Cibinong 16918
@@ -898,31 +900,87 @@
 				</div>
 			</section>
 
-			<footer class="footer" style="margin-bottom: 0;">
+			<!-- <footer class="footer" style="margin-bottom: 0;">
 				<div class="footer-logo">
-					<p class="ml-1" style="margin-top: 30px; margin-right: 0;">BPR Prima Kredit Mandiri
-						Terdaftar dan Diawasi Oleh
-						Otoritas Jasa Keuangan
+					<p class="ml-1" style="margin-top: 40px; margin-right: 0;">
+                        BPR Prima Kredit Mandiri<br>
+                        Berizin dan Di Awasi
+                        Oleh Otoritas Jasa Keuangan
 					</p>					
 					<img src="images/bpr/OJK_Logo.png" alt="Logo" width="200">						
 				</div>
 				<div class="button-form">
-					<a href="https://wa.me/0811877875" class="btn custom-small-btn">Ajukan Kredit Sekarang</a>
+					<a href="https://wa.me/0811877875" class="btn custom-big-btn">Ajukan Kredit Sekarang</a>
 				</div>
 				<div class="footer-logo">
-					<img src="images/bpr/Lembaga Penjamin Simpanan.png" alt="Logo" width="200">		
-					<p class="ml-2">BPR Prima Kredit Mandiri
+					<img src="images/bpr/LPS_resize.png" alt="Logo" width="200">		
+					<p class="ml-2">BPR Prima Kredit Mandiri<br>
 						Peserta Penjaminan
 						Lembaga Penjamin Simpanan
 					</p>				
 				</div>
-			</footer>							
-			
+			</footer>							 -->
+
+            <!-- Footer untuk Dekstop -->
+            <footer class="desktop-footer" style="justify-content: space-between; align-items: center; background-color: #003b71; color: #fff; padding: 10px 20px;">
+                <!-- <footer class="desktop-footer" style="margin-bottom: 0; background-color: #003b71; color: white;"> -->
+                <div class="footer-logo">
+                    <p class="ml-1" style="margin-top: 40px; margin-right: 0;">
+                        BPR Prima Kredit Mandiri<br>
+                        Berizin dan Diawasi
+                        Oleh Otoritas Jasa Keuangan
+                    </p>
+                    <img src="images/bpr/OJK_Logo.png" alt="Logo" width="200">
+                </div>
+                <div class="button-form">
+                    <a href="https://wa.me/0811877875" class="btn custom-big-btn">Ajukan Kredit Sekarang</a>
+                </div>
+                <div class="footer-logo">
+                    <img src="images/bpr/LPS_resize.png" alt="Logo" width="200">
+                    <p class="ml-2">BPR Prima Kredit Mandiri<br>
+                        Peserta Penjaminan
+                        Lembaga Penjamin Simpanan
+                    </p>
+                </div>
+            </footer>
+
+            <!-- Footer untuk Seluler -->
+            <footer class="mobile-footer" style="margin-bottom: 0; background-color: #003b71; color: white;">
+                <div class="button-form">
+                    <a href="https://wa.me/0811877875" class="btn custom-big-btn">Ajukan Kredit Sekarang</a>
+                </div>
+                <div class="image-container">
+                    <img src="images/bpr/OJK_Logo.png" alt="Logo" width="200">
+                    <img src="images/bpr/LPS_resize.png" alt="Logo" width="200">
+                </div>
+                <div class="footer-logo">
+                    <p class="ml-1">
+                        BPR Prima Kredit Mandiri<br>
+                        Berizin dan Diawasi
+                        Oleh Otoritas Jasa Keuangan
+                    </p>
+                    <p class="ml-2">BPR Prima Kredit Mandiri<br>
+                        Peserta Penjaminan
+                        Lembaga Penjamin Simpanan
+                    </p>
+                </div>
+            </footer>
+		
 			<footer class="custom-footer">
 				<div class="container">
 					<div class="row justify-content-center">
 						<h6 class="fs-12 text-uppercase">Copyright &copy; <span class="copyright_year">2023</span>
 						<a href="#home"> PT BPR PRIMA KREDIT MANDIRI.</a>
+						ALL RIGHTS RESERVED.</h6>
+					</div>
+				</div>	
+			</footer>
+
+            <footer class="custom-footer-mobile">
+				<div class="container">
+					<div class="row justify-content-center">
+						<h6 class="fs-12 text-uppercase">Copyright &copy; <span class="copyright_year">2023</span>
+						<a href="#home"> PT BPR PRIMA KREDIT MANDIRI.</a><br>
 						ALL RIGHTS RESERVED.</h6>
 					</div>
 				</div>	
