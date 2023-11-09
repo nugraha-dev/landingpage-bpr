@@ -4269,6 +4269,7 @@ div.row.c-gutter-15 {
 div.row.c-gutter-10 {
 	margin-left: -5px;
 	margin-right: -5px;
+	margin-bottom: 10px;
 }
 
 .c-gutter-5 .row,
@@ -13491,6 +13492,7 @@ body.boxed {
 /* text helpers */
 .fs-12 {
 	font-size: 12px;
+	margin-top: 10px;
 }
 
 .fs-14 {
@@ -31240,55 +31242,34 @@ img.absolute_image {
 }
 
 .image-container {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center; 
-	/* Pusatkan gambar horizontal */
-	/* align-items: center;  */
-	/* Pusatkan gambar vertikal */
-	padding: 50px 20px;
+    display: flex;
+    flex-wrap: nowrap; /* Menahan gambar pada satu baris */
+    justify-content: center; 
+    padding: 50px 20px;
 }
 
 .image-container img {
-	width: 50%; /* Setengah dari lebar container untuk masing-masing gambar */
-	height: auto; /* Mempertahankan rasio aspek gambar */
+    max-width: 100%; /* Gunakan lebar maksimum agar gambar tetap responsif */
+    height: auto; /* Mempertahankan rasio aspek gambar */
+    margin: 0 10px; /* Menambahkan margin antar gambar */
 }
 
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #003b71;
-    color: #fff;
-    padding: 10px 20px;
-}
-
-.footer-logo {
-    display: flex;
-    align-items: center;
-    margin: 20px;
-    padding: 20px;
-	margin-top: 10px;
-	margin-right: 20px;
-	margin-bottom: 30px;
-	margin-left: 20px;
-	
-	padding-top: 10px;
-	padding-right: 20px;
-	padding-bottom: 40px;
-	padding-left: 20px;
-}
-
-/* Responsif pada layar berukuran kecil (misalnya, ponsel) */
-@media screen and (max-width: 768px) {
-    .footer {
-        flex-direction: column; /* Ubah tampilan menjadi satu kolom */
-        text-align: center; /* Pusatkan teks di kolom */
+/* Untuk layar desktop */
+@media (min-width: 768px) {
+    .image-container {
+        max-width: 400px; /* Sesuaikan dengan kebutuhan Anda */
     }
 
-    .footer-logo {
-        margin: 10px 0; /* Ubah margin atas dan bawah menjadi 10px */
-        padding: 10px; /* Ubah padding menjadi 10px */
+    .image-container img {
+        width: 100%; /* Gunakan lebar penuh untuk gambar di layar desktop */
+    }
+}
+
+/* Untuk layar ponsel */
+@media (max-width: 767px) {
+    .image-container {
+        max-width: 200px; /* Sesuaikan dengan kebutuhan Anda */
+        padding: 20px; /* Sesuaikan dengan kebutuhan Anda */
     }
 }
 
@@ -31324,7 +31305,7 @@ img.absolute_image {
 
 .info-box-column2 {
 	flex: 0 0 calc(50% - 10px); /* Lebar masing-masing kolom, dikurangi jarak (20px) */
-    padding: 20px;
+    /* padding: 20px; */
     /* background-color: #073a4e;
     border: 1px solid #ddd; */
     text-align: center;
@@ -31357,7 +31338,8 @@ img.absolute_image {
     }
 
     .info-box-column3 {
-        flex: 0 0 100%; /* Saat layar lebih kecil, setiap kolom akan menempati lebar 100% */
+        flex: 0 0 90%; /* Saat layar lebih kecil, setiap kolom akan menempati lebar 100% */
+		padding: 10px;
     }
 }
 
@@ -31480,8 +31462,8 @@ img.absolute_image {
 
   p {
 	margin-top: 10px;
-	margin-right: 20px;
-	margin-bottom: 30px;
+	/* margin-right: 20px; */
+	/* margin-bottom: 30px; */
 	margin-left: 20px;
 	
 	padding-top: 10px;
@@ -31498,13 +31480,23 @@ img.absolute_image {
 	color: #4d6988;
     margin-top: 10px;
 	margin-right: 20px;
-	margin-bottom: 30px;
+	/* margin-bottom: 30px; */
 	margin-left: 20px;
 	
 	padding-top: 10px;
 	padding-right: 20px;
-	padding-bottom: 20px;
+	/* padding-bottom: 20px; */
 	padding-left: 20px;
+}
+
+/* Untuk layar seluler (ukuran maksimal 599px) */
+@media screen and (max-width: 599px) {
+    .col-12 p {
+        text-align: center !important; /* Set text-align ke center */
+        color: #003b71 !important; /* Ganti warna teks */
+		padding: 10px;
+		margin: 10px;
+    }
 }
 
 /* Menambahkan padding ke elemen dengan class "row" */
@@ -31551,11 +31543,11 @@ img.absolute_image {
     border: 5px solid white;
     border-radius: 14px;
     width: 25%; /* Gunakan persentase untuk lebar formulir */
-    max-width: 400px; /* Batasan maksimum lebar formulir */
+    /* max-width: 400px; */
     position: absolute;
-    top: 57%; /* Pusatkan formulir secara vertikal */
+    top: 50%;
     right: 10px; /* Geser formulir ke kanan sesuai kebutuhan */
-    transform: translateY(-50%); /* Menengahkan formulir secara vertikal */
+    transform: translateY(-50%);
     padding: 20px;
     color: white; /* Atur warna teks formulir */
     margin-right: 50px;
@@ -31595,6 +31587,24 @@ img.absolute_image {
     display: inline-block; /* Memastikan tombol berada dalam kontainer inline */
 }
 
+@media (max-width: 768px) {
+    .button-form custom {
+        width: auto;
+        padding: 50px;
+        position: static; /* Kembalikan posisi ke statis untuk layout ponsel */
+        transform: translateY(0); /* Hapus transform pada layar ponsel */
+		margin-top: 10px;
+		margin-right: 20px;
+		margin-bottom: 30px;
+		margin-left: 20px;
+		
+		padding-top: 10px;
+		padding-right: 20px;
+		padding-bottom: 20px;
+		padding-left: 20px;
+    }
+}
+
 .custom-small-btn {
     font-size: 14px !important;
     padding: 8px 30px !important;
@@ -31603,14 +31613,158 @@ img.absolute_image {
 	color: #fef4f0;
 }
 
+.custom-medium-btn {
+    font-size: 18px !important;
+    padding: 15px 30px !important;
+	background-color: #f8650d;
+	border-radius: 5px;
+	color: #fef4f0;
+	margin-top: 30px;
+}
+
+.custom-big-btn {
+    font-size: 20px !important;
+	padding: 20px 30px !important;
+	background-color: #f8650d;
+	border-radius: 10px;
+	color: #fef4f0;
+	margin-top: 30px;
+}
+
 p.custom-paragraph {
     line-height: 7px;
     text-align: center;
 	padding: 0;
 }
 
-.custom-footer {
-	text-align: center;
-	color: #003b71;
-	margin-top: 5px;
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003b71;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    /* margin: 20px;
+    padding: 20px; */
+	margin-top: 10px;
+	margin-right: 20px;
+	margin-left: 20px;
+	
+	padding-top: 10px;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+/* Responsif pada layar berukuran kecil (misalnya, ponsel) */
+@media screen and (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Ubah tampilan menjadi satu kolom */
+        text-align: center; /* Pusatkan teks di kolom */
+    }
+
+    .footer-logo {
+        margin: 10px 0; /* Ubah margin atas dan bawah menjadi 10px */
+        padding: 10px; /* Ubah padding menjadi 10px */
+    }
+}
+
+/* CSS untuk layar dekstop (ukuran minimum 600px) */
+@media screen and (min-width: 600px) {
+	.custom-footer-mobile {
+		display: none; /* Sembunyikan footer untuk seluler */
+	}
+
+	.custom-footer {
+		display: block; /* Tampilkan footer untuk dekstop */
+		text-align: center;
+		color: #003b71;
+		margin-top: 5px;
+	}
+}
+
+/* CSS untuk layar seluler (ukuran maksimum 599px) */
+@media screen and (max-width: 599px) {
+	.custom-footer {
+		display: none; /* Sembunyikan footer untuk dekstop */
+	}
+
+	.custom-footer-mobile {
+		display: block;
+		text-align: center;
+		color: #003b71;
+		margin-top: 5px;
+	}
+}
+
+/* CSS untuk align left (ml-1) */
+.ml-1 {
+    text-align: left;
+	/* margin-bottom: 5px; */
+}
+
+/* CSS untuk align right (ml-2) */
+.ml-2 {
+    text-align: left;
+	margin: 0;
+	padding-right: 20px;
+}
+
+/* Atur tata letak untuk layar dekstop (ukuran minimum 600px) */
+@media screen and (min-width: 600px) {
+	.mobile-footer {
+		display: none; /* Sembunyikan footer untuk seluler */
+	}
+
+	.desktop-footer {
+		display: flex; /* Tampilkan footer untuk dekstop */
+	}
+}
+
+/* Atur tata letak untuk layar seluler (ukuran maksimum 599px) */
+@media screen and (max-width: 599px) {
+	.desktop-footer {
+		display: none; /* Sembunyikan footer untuk dekstop */
+	}
+
+	.mobile-footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .button-form {
+        order: -1; /* Mendekatkan tombol ke atas */
+    }
+
+    .footer-logo {
+        margin-top: 10px; /* Jarak antara dua logo */
+    }
+
+    .footer-logo img {
+        margin-bottom: 10px; /* Jarak antara logo dan teks di bawahnya */
+    }
+
+    .ml-2 {
+		text-align: right;
+	}
+}
+
+/* Class untuk custom text */
+.custom-text {
+    /* padding: 10px; Atur padding sesuai kebutuhan */
+    margin: 0; /* Atur margin menjadi 0 */
+    max-width: 20%; /* Atur lebar maksimum sesuai kebutuhan */
+}
+
+/* Media query untuk tampilan dekstop (ukuran minimum 600px) */
+@media screen and (max-width: 599px) {
+    .custom-text {
+        max-width: none !important; /* Hapus batasan lebar pada layar seluler */
+    }
 }
