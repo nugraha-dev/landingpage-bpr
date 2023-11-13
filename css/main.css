@@ -31468,7 +31468,7 @@ img.absolute_image {
 	
 	padding-top: 10px;
 	padding-right: 20px;
-	padding-bottom: 40px;
+	padding-bottom: 20px;
 	padding-left: 20px;
   }
 
@@ -31624,11 +31624,11 @@ img.absolute_image {
 
 .custom-big-btn {
     font-size: 20px !important;
-	padding: 20px 30px !important;
+	padding: 10px 30px !important;
 	background-color: #f8650d;
 	border-radius: 10px;
 	color: #fef4f0;
-	margin-top: 30px;
+	/* margin-top: 20px; */
 }
 
 p.custom-paragraph {
@@ -31651,11 +31651,11 @@ p.custom-paragraph {
     align-items: center;
     /* margin: 20px;
     padding: 20px; */
-	margin-top: 10px;
+	/* margin-top: 10px; */
 	margin-right: 20px;
 	margin-left: 20px;
 	
-	padding-top: 10px;
+	/* padding-top: 10px; */
 	padding-right: 20px;
 	padding-left: 20px;
 }
@@ -31668,8 +31668,8 @@ p.custom-paragraph {
     }
 
     .footer-logo {
-        margin: 10px 0; /* Ubah margin atas dan bawah menjadi 10px */
-        padding: 10px; /* Ubah padding menjadi 10px */
+        /* margin: 10px 0; /* Ubah margin atas dan bawah menjadi 10px */
+        /* padding: 10px; Ubah padding menjadi 10px */
     }
 }
 
@@ -31703,13 +31703,13 @@ p.custom-paragraph {
 
 /* CSS untuk align left (ml-1) */
 .ml-1 {
-    text-align: left;
+    text-align: center;
 	/* margin-bottom: 5px; */
 }
 
 /* CSS untuk align right (ml-2) */
 .ml-2 {
-    text-align: left;
+    text-align: center;
 	margin: 0;
 	padding-right: 20px;
 }
@@ -31743,16 +31743,16 @@ p.custom-paragraph {
     }
 
     .footer-logo {
-        margin-top: 10px; /* Jarak antara dua logo */
+        /* margin-top: 10px; Jarak antara dua logo */
     }
 
     .footer-logo img {
         margin-bottom: 10px; /* Jarak antara logo dan teks di bawahnya */
     }
 
-    .ml-2 {
+    /* .ml-2 {
 		text-align: right;
-	}
+	} */
 }
 
 /* Class untuk custom text */
@@ -31767,4 +31767,26 @@ p.custom-paragraph {
     .custom-text {
         max-width: none !important; /* Hapus batasan lebar pada layar seluler */
     }
+}
+
+/* Media query untuk versi desktop */
+@media screen and (min-width: 601px) {
+	.mobile-version {
+		display: none; /* Menyembunyikan elemen dengan class 'mobile-version' pada versi desktop */
+	}
+
+	.desktop-version {
+		display: block; /* Menampilkan elemen dengan class 'desktop-version' pada versi desktop */
+	}
+}
+
+/* Media query untuk versi mobile */
+@media screen and (max-width: 600px) {
+	.mobile-version {
+		display: block; /* Menampilkan elemen dengan class 'mobile-version' pada versi mobile */
+	}
+
+	.desktop-version {
+		display: none; /* Menyembunyikan elemen dengan class 'desktop-version' pada versi mobile */
+	}
 }
