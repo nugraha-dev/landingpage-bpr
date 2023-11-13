@@ -1622,7 +1622,8 @@ input[type="radio"]:disabled + label:before {
 }
 
 .btn.medium-btn {
-	padding: 15px 35px;
+	/* padding: 15px 35px; */
+	padding-left: 50px;
 }
 
 .btn.big-btn {
@@ -31542,20 +31543,38 @@ img.absolute_image {
     background: #044ca4;
     border: 5px solid white;
     border-radius: 14px;
-    width: 25%; /* Gunakan persentase untuk lebar formulir */
-    /* max-width: 400px; */
+    width: 25%;
+    max-height: 100vh; /* Tentukan ketinggian maksimum yang diinginkan */
+    overflow-y: auto; /* Aktifkan scroll vertikal jika kontennya melebihi ketinggian maksimum */
     position: absolute;
-    top: 50%;
-    right: 10px; /* Geser formulir ke kanan sesuai kebutuhan */
-    transform: translateY(-50%);
+    top: 10%;
+    right: 10px;
+    transform: translateY(-10%);
     padding: 20px;
-    color: white; /* Atur warna teks formulir */
+    color: white;
     margin-right: 50px;
+	scrollbar-color: #f0b41c;
+}
+
+.form-wrapper::-webkit-scrollbar {
+    width: 4px; /* Atur lebar scrollbar */
+}
+
+.form-wrapper::-webkit-scrollbar-thumb {
+    background-color: #f0b41c; /* Warna thumb (bagian yang dapat digerakkan) */
+}
+
+.form-wrapper::-webkit-scrollbar-track {
+    background-color: white; /* Warna track (bagian yang tidak dapat digerakkan) */
 }
 
 /* Gaya untuk layar ponsel (ukuran layar kurang dari 768px) */
 @media (max-width: 768px) {
     .form-wrapper {
+		background: #044ca4;
+		border: 5px solid white;
+		border-radius: 14px;
+		width: 25%; 
         width: auto;
         padding: 50px;
         position: static; /* Kembalikan posisi ke statis untuk layout ponsel */
@@ -31622,13 +31641,18 @@ img.absolute_image {
 	margin-top: 30px;
 }
 
+.button-form {
+    text-align: center;
+	/* padding-left: 50px !important; */
+}
+
 .custom-big-btn {
     font-size: 20px !important;
-	padding: 10px 30px !important;
+	/* padding: 10px 30px !important; */
 	background-color: #f8650d;
 	border-radius: 10px;
 	color: #fef4f0;
-	/* margin-top: 20px; */
+	margin-top: 40px;
 }
 
 p.custom-paragraph {
@@ -31651,7 +31675,7 @@ p.custom-paragraph {
     align-items: center;
     /* margin: 20px;
     padding: 20px; */
-	/* margin-top: 10px; */
+	/* margin-top: 20px; */
 	margin-right: 20px;
 	margin-left: 20px;
 	
@@ -31758,7 +31782,7 @@ p.custom-paragraph {
 /* Class untuk custom text */
 .custom-text {
     /* padding: 10px; Atur padding sesuai kebutuhan */
-    margin: 0; /* Atur margin menjadi 0 */
+    margin: 0;
     max-width: 20%; /* Atur lebar maksimum sesuai kebutuhan */
 }
 
@@ -31789,4 +31813,32 @@ p.custom-paragraph {
 	.desktop-version {
 		display: none; /* Menyembunyikan elemen dengan class 'desktop-version' pada versi mobile */
 	}
+}
+
+/* Floating WhatsApp Icon */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px; /* Sesuaikan dengan kebutuhan Anda */
+    left: 20px; /* Sesuaikan dengan kebutuhan Anda */
+    z-index: 1000; /* Pastikan lebih tinggi dari elemen lain di halaman */
+}
+
+.whatsapp-icon {
+	display: flex;
+	align-items: center;
+}
+
+.whatsapp-icon img {
+	width: 40px; /* Sesuaikan dengan ukuran ikon WhatsApp yang diinginkan */
+	height: 40px;
+	margin-right: 10px; /* Jarak antara ikon dan teks */
+}
+
+.whatsapp-icon a {
+	text-decoration: none;
+	color: #fff; /* Warna teks */
+	font-weight: bold;
+	background-color: #003b71; /* Warna latar belakang */
+	padding: 8px; /* Padding untuk meningkatkan kenyamanan */
+	border-radius: 5px; /* Agar sudut tampil lebih lembut */
 }
