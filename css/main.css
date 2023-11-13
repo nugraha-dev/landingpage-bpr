@@ -31652,7 +31652,7 @@ img.absolute_image {
 	background-color: #f8650d;
 	border-radius: 10px;
 	color: #fef4f0;
-	margin-top: 40px;
+	/* margin-top: 40px; */
 }
 
 p.custom-paragraph {
@@ -31695,6 +31695,16 @@ p.custom-paragraph {
         /* margin: 10px 0; /* Ubah margin atas dan bawah menjadi 10px */
         /* padding: 10px; Ubah padding menjadi 10px */
     }
+
+	.custom-big-btn {
+		font-size: 20px !important;
+		/* padding: 10px 30px !important; */
+		background-color: #f8650d;
+		border-radius: 10px;
+		color: #fef4f0;
+		margin-top: 30px;
+		margin-bottom: 20px;
+	}
 }
 
 /* CSS untuk layar dekstop (ukuran minimum 600px) */
