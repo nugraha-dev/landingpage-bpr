@@ -31728,6 +31728,7 @@ p.custom-paragraph {
 /* CSS untuk align left (ml-1) */
 .ml-1 {
     text-align: center;
+	margin-left: 60px !important;
 	/* margin-bottom: 5px; */
 }
 
@@ -31735,7 +31736,8 @@ p.custom-paragraph {
 .ml-2 {
     text-align: center;
 	margin: 0;
-	padding-right: 20px;
+	margin-right: 50px !important;
+	/* padding-right: 20px; */
 }
 
 /* Atur tata letak untuk layar dekstop (ukuran minimum 600px) */
@@ -31774,9 +31776,10 @@ p.custom-paragraph {
         margin-bottom: 10px; /* Jarak antara logo dan teks di bawahnya */
     }
 
-    /* .ml-2 {
-		text-align: right;
-	} */
+    .ml-1, .ml-2 {
+		text-align: center;
+		margin: 0 !important;
+	}
 }
 
 /* Class untuk custom text */
