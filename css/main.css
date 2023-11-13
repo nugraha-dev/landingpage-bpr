@@ -31543,7 +31543,7 @@ img.absolute_image {
     background: #044ca4;
     border: 5px solid white;
     border-radius: 14px;
-    width: 25%;
+    width: 30%;
     max-height: 100vh; /* Tentukan ketinggian maksimum yang diinginkan */
     overflow-y: auto; /* Aktifkan scroll vertikal jika kontennya melebihi ketinggian maksimum */
     position: absolute;
@@ -31832,8 +31832,8 @@ p.custom-paragraph {
 }
 
 .whatsapp-icon img {
-	width: 40px; /* Sesuaikan dengan ukuran ikon WhatsApp yang diinginkan */
-	height: 40px;
+	width: 60px; /* Sesuaikan dengan ukuran ikon WhatsApp yang diinginkan */
+	height: 60px;
 	margin-right: 10px; /* Jarak antara ikon dan teks */
 }
 
@@ -31841,7 +31841,7 @@ p.custom-paragraph {
 	text-decoration: none;
 	color: #fff; /* Warna teks */
 	font-weight: bold;
-	background-color: #003b71; /* Warna latar belakang */
+	/* background-color: #003b71; Warna latar belakang */
 	padding: 8px; /* Padding untuk meningkatkan kenyamanan */
 	border-radius: 5px; /* Agar sudut tampil lebih lembut */
 }
