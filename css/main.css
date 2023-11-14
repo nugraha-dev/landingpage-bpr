@@ -31831,27 +31831,45 @@ p.custom-paragraph {
 /* Floating WhatsApp Icon */
 .whatsapp-icon {
     position: fixed;
-    bottom: 20px; /* Sesuaikan dengan kebutuhan Anda */
-    left: 20px; /* Sesuaikan dengan kebutuhan Anda */
-    z-index: 1000; /* Pastikan lebih tinggi dari elemen lain di halaman */
-}
-
-.whatsapp-icon {
-	display: flex;
-	align-items: center;
+    bottom: 20px; /* Adjust as needed */
+    left: 20px; /* Adjust as needed */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
 }
 
 .whatsapp-icon img {
-	width: 60px; /* Sesuaikan dengan ukuran ikon WhatsApp yang diinginkan */
-	height: 60px;
-	margin-right: 10px; /* Jarak antara ikon dan teks */
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
 }
 
 .whatsapp-icon a {
-	text-decoration: none;
-	color: #fff; /* Warna teks */
-	font-weight: bold;
-	/* background-color: #003b71; Warna latar belakang */
-	padding: 8px; /* Padding untuk meningkatkan kenyamanan */
-	border-radius: 5px; /* Agar sudut tampil lebih lembut */
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 5px;
+	transition: background-color 0.3s ease; /* Menambahkan efek transisi pada perubahan warna latar belakang */
+}
+
+/* Media query for desktop */
+@media screen and (max-width: 600px) {
+    .whatsapp-icon {
+        display: block;
+    }
+}
+
+/* Media query for mobile */
+@media screen and (min-width: 601px) {
+    .whatsapp-icon a::after {
+        content: " Hubungi Kami";
+		background-color: #f8650d;
+		padding: 8px; /* Tambahkan padding di sekitar teks */
+    	border-radius: 5px;
+    }
+
+	.whatsapp-icon a:hover {
+		color: #ccc; /* Warna teks saat dihover */
+	}
 }
